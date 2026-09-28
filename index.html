@@ -41,8 +41,6 @@ body {
 }
 
 a { color: var(--rose); }
-button, input, textarea, select { font: inherit; }
-button { cursor: pointer; }
 
 .hero {
   text-align: center;
@@ -65,7 +63,6 @@ button { cursor: pointer; }
   margin: 8px 0;
 }
 
-/* Only headings use the cute handwritten font */
 h1, h2, h3, .handwriting {
   font-family: 'Caveat', cursive;
   font-weight: 600;
@@ -175,15 +172,7 @@ section { scroll-margin-top: 18px; }
   margin-bottom: 0;
 }
 
-label {
-  display: block;
-  color: var(--rose);
-  font-weight: 700;
-  font-size: 12px;
-  margin: 16px 0 6px;
-}
-
-input, textarea, select {
+select {
   display: block;
   width: 100%;
   padding: 12px 14px;
@@ -191,59 +180,8 @@ input, textarea, select {
   background: #fffafb;
   border: 1px solid var(--border);
   border-radius: 9px;
-  outline: none;
-}
-
-input:focus, textarea:focus, select:focus {
-  border-color: var(--pink-dark);
-  box-shadow: 0 0 0 3px #f9e8ef;
-}
-
-textarea {
-  min-height: 230px;
-  resize: vertical;
-  line-height: 1.85;
-}
-
-.button-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 9px;
-  margin-top: 16px;
-}
-
-.btn, .youtube-button {
-  display: inline-block;
-  padding: 10px 17px;
-  border: 1px solid #e9cad8;
-  border-radius: 25px;
-  background: var(--pink);
-  color: var(--rose);
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 700;
-  transition: background .2s;
-}
-
-.btn:hover, .youtube-button:hover { background: #f3dbe6; }
-
-.btn.primary {
-  background: var(--pink-dark);
-  border-color: var(--pink-dark);
-  color: white;
-}
-
-.btn.primary:hover { background: var(--rose); }
-
-.message {
-  color: var(--rose);
-  font-size: 13px;
-  min-height: 20px;
-}
-
-.note {
-  color: var(--muted);
-  font-size: 12px;
+  font: inherit;
+  margin: 12px 0 20px;
 }
 
 .entry-card {
@@ -273,13 +211,24 @@ textarea {
   padding: 20px 8px;
 }
 
-.divider {
-  border: 0;
-  border-top: 1px solid var(--border);
-  margin: 25px 0;
+.youtube-button {
+  display: inline-block;
+  padding: 10px 17px;
+  border: 1px solid #e9cad8;
+  border-radius: 25px;
+  background: var(--pink);
+  color: var(--rose);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
 }
 
-.hidden { display: none !important; }
+.youtube-button:hover { background: #f3dbe6; }
+
+.handwriting {
+  font-size: 29px;
+  color: var(--pink-dark);
+}
 
 footer {
   text-align: center;
@@ -289,9 +238,8 @@ footer {
   font-size: 12px;
 }
 
-footer .handwriting {
-  font-size: 29px;
-  color: var(--pink-dark);
+footer .lotus {
+  margin-top: 8px;
 }
 
 @media (max-width: 560px) {
@@ -306,7 +254,9 @@ footer .handwriting {
 <body>
 
 <header class="hero" id="home">
-  <svg class="lotus" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pink lotus flower">
+  <svg class="lotus" viewBox="0 0 100 80"
+       xmlns="http://www.w3.org/2000/svg" role="img"
+       aria-label="Pink lotus flower">
     <g stroke="#bd7898" stroke-width="1.5" stroke-linejoin="round">
       <path d="M50 65 C25 55 24 30 50 8 C76 30 75 55 50 65Z" fill="#e9a9c2"/>
       <path d="M48 65 C20 65 9 48 13 30 C33 36 46 48 48 65Z" fill="#f2c9da"/>
@@ -320,7 +270,10 @@ footer .handwriting {
   <p class="eyebrow">a little personal writing space</p>
   <h1>Eva Dandelion</h1>
   <p class="tagline">all the things I never quite say out loud ♡</p>
-  <a class="youtube-button" href="https://www.youtube.com/@creativecorner100" target="_blank" rel="noopener noreferrer">
+
+  <a class="youtube-button"
+     href="https://www.youtube.com/@creativecorner100"
+     target="_blank" rel="noopener noreferrer">
     ♡ Visit my YouTube channel
   </a>
 </header>
@@ -330,8 +283,6 @@ footer .handwriting {
   <a href="#diary">MY DIARY</a>
   <a href="#collections">MY WRITING</a>
   <a href="#public-pages">READ</a>
-  <a href="#writing-desk">WRITE</a>
-  <a href="#drafts">MY DRAFTS</a>
   <a href="#about">ABOUT</a>
 </nav>
 
@@ -353,10 +304,10 @@ footer .handwriting {
   <p>
     Little moments, thoughts and memories, written one page at a time.
   </p>
-  <div class="button-row">
-    <a class="btn" href="#public-pages" onclick="setFilter('Diary')">Read published diary pages</a>
-    <a class="btn" href="#writing-desk" onclick="chooseCategory('Diary')">Write a new page</a>
-  </div>
+  <a class="youtube-button" href="#public-pages"
+     onclick="setFilter('Diary')">
+    Read published diary pages ♡
+  </a>
 </section>
 
 <section id="collections" class="paper">
@@ -365,22 +316,29 @@ footer .handwriting {
   <p>Different kinds of words, each with a home of their own.</p>
 
   <div class="category-grid">
-    <a class="category-card" href="#public-pages" onclick="setFilter('Diary')">
+    <a class="category-card" href="#public-pages"
+       onclick="setFilter('Diary')">
       <div class="category-icon">💌</div>
       <h3>My Diary</h3>
       <p>Thoughts, memories and everyday moments.</p>
     </a>
-    <a class="category-card" href="#public-pages" onclick="setFilter('Poetry')">
+
+    <a class="category-card" href="#public-pages"
+       onclick="setFilter('Poetry')">
       <div class="category-icon">🌷</div>
       <h3>My Poetry</h3>
       <p>Feelings shaped into little poems.</p>
     </a>
-    <a class="category-card" href="#public-pages" onclick="setFilter('Stories')">
+
+    <a class="category-card" href="#public-pages"
+       onclick="setFilter('Stories')">
       <div class="category-icon">📖</div>
       <h3>My Stories</h3>
       <p>Characters, imaginary worlds and tales.</p>
     </a>
-    <a class="category-card" href="#public-pages" onclick="setFilter('Novels')">
+
+    <a class="category-card" href="#public-pages"
+       onclick="setFilter('Novels')">
       <div class="category-icon">🕯️</div>
       <h3>My Novels</h3>
       <p>Chapters and longer stories in progress.</p>
@@ -391,7 +349,7 @@ footer .handwriting {
 <section id="public-pages" class="paper">
   <p class="eyebrow">03 · shared with you</p>
   <h2>Published Pages ♡</h2>
-  <p>These pages are public and can be read by anyone visiting the website.</p>
+  <p>Settle in and enjoy my writing. Thank you for being here.</p>
 
   <label for="public-filter">Choose a collection</label>
   <select id="public-filter">
@@ -402,78 +360,20 @@ footer .handwriting {
     <option value="Novels">Novels</option>
   </select>
 
-  <div id="public-list"></div>
-</section>
-
-<section id="writing-desk" class="paper">
-  <p class="eyebrow">04 · your writing desk</p>
-  <h2 id="desk-title">Let's write something ♡</h2>
-  <p>Write here and save your work as a private draft.</p>
-
-  <form id="entry-form">
-    <label for="entry-category">Category</label>
-    <select id="entry-category" required>
-      <option value="Diary">Diary</option>
-      <option value="Poetry">Poetry</option>
-      <option value="Stories">Stories</option>
-      <option value="Novels">Novels</option>
-    </select>
-
-    <label for="entry-title">Title</label>
-    <input id="entry-title" maxlength="200" placeholder="Give your page a name..." required>
-
-    <label for="entry-date">Date</label>
-    <input id="entry-date" type="date" required>
-
-    <label for="entry-content">Your words</label>
-    <textarea id="entry-content" placeholder="Dear diary... ♡" required></textarea>
-
-    <div class="button-row">
-      <button class="btn primary" id="save-button" type="submit">Save private draft</button>
-      <button class="btn" id="clear-button" type="button">Clear page</button>
-      <button class="btn hidden" id="cancel-button" type="button">Cancel editing</button>
-    </div>
-    <p id="form-message" class="message" aria-live="polite"></p>
-  </form>
-
-  <hr class="divider">
-
-  <h3>How to publish your writing</h3>
-  <p>
-    GitHub Pages cannot automatically publish text from this writing box.
-    To publish an entry for everyone, add it to the PUBLIC_ENTRIES list in
-    this file and commit the change on GitHub. It will then appear under
-    Published Pages.
-  </p>
-  <p class="note">
-    Anything added to PUBLIC_ENTRIES is public. Never add private thoughts
-    or sensitive information there.
-  </p>
-</section>
-
-<section id="drafts" class="paper">
-  <p class="eyebrow">05 · saved on this device</p>
-  <h2>My Private Drafts</h2>
-  <p>These drafts are saved in this browser and are not published on the website.</p>
-  <div id="draft-list"></div>
-  <div class="button-row">
-    <button class="btn" id="backup-button" type="button">Download draft backup</button>
-  </div>
-  <p class="note">
-    Drafts are not password-protected or encrypted. Clearing browser data
-    can erase them, so download a backup of anything important.
-  </p>
+  <div id="public-list" aria-live="polite"></div>
 </section>
 
 <section id="about" class="paper">
-  <p class="eyebrow">06 · about this space</p>
+  <p class="eyebrow">04 · about this space</p>
   <h2>About Eva Dandelion</h2>
   <p>
     A pen name and a little corner for poetry, stories, diary pages and daydreams.
     A place where words can grow at their own pace.
   </p>
   <p class="handwriting">With love, Eva ♡</p>
-  <a class="youtube-button" href="https://www.youtube.com/@creativecorner100" target="_blank" rel="noopener noreferrer">
+  <a class="youtube-button"
+     href="https://www.youtube.com/@creativecorner100"
+     target="_blank" rel="noopener noreferrer">
     Find me on YouTube ↗
   </a>
 </section>
@@ -481,7 +381,9 @@ footer .handwriting {
 </main>
 
 <footer>
-  <svg class="lotus" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pink lotus flower">
+  <svg class="lotus" viewBox="0 0 100 80"
+       xmlns="http://www.w3.org/2000/svg" role="img"
+       aria-label="Pink lotus flower">
     <g stroke="#bd7898" stroke-width="1.5" stroke-linejoin="round">
       <path d="M50 65 C25 55 24 30 50 8 C76 30 75 55 50 65Z" fill="#e9a9c2"/>
       <path d="M48 65 C20 65 9 48 13 30 C33 36 46 48 48 65Z" fill="#f2c9da"/>
@@ -491,26 +393,21 @@ footer .handwriting {
     </g>
     <path d="M24 75 Q50 81 76 75" fill="none" stroke="#bd7898" stroke-width="2" stroke-linecap="round"/>
   </svg>
+
   <p class="handwriting">Eva Dandelion ♡</p>
   <p>A little world made of words, feelings and daydreams.</p>
-  <a href="https://www.youtube.com/@creativecorner100" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.youtube.com/@creativecorner100"
+     target="_blank" rel="noopener noreferrer">
     YouTube · @creativecorner100
   </a>
 </footer>
 
 <script>
 /*
-  PUBLIC ENTRIES:
-  Entries here are visible to everyone visiting your website.
-  Only add writing you want to share publicly.
-
-  Example:
-  {
-    title: "My First Page",
-    category: "Diary",
-    date: "2026-09-28",
-    content: "Today I decided to share a little piece of my world."
-  }
+  PUBLIC WRITING:
+  Add only writing you want everyone to read.
+  Separate entries with commas.
+  Do not put private drafts or personal secrets here.
 */
 
 const PUBLIC_ENTRIES = [
@@ -520,58 +417,24 @@ const PUBLIC_ENTRIES = [
     date: "2026-09-28",
     content: "Hello, welcome to my little world! 🌷 This is my first public diary entry."
   }
-];// Add public entries here, separated by commas.
+
+  /*
+  EXAMPLE OF ANOTHER ENTRY — remove the comment marks to use it:
+
+  ,{
+    title: "A Little Poem",
+    category: "Poetry",
+    date: "2026-09-28",
+    content: "Write your poem here."
+  }
+  */
+];
 
 (function () {
   "use strict";
 
-  const STORAGE_KEY = "evaDandelionPrivateDraftsV5";
-
-  const form = document.getElementById("entry-form");
-  const categoryInput = document.getElementById("entry-category");
-  const titleInput = document.getElementById("entry-title");
-  const dateInput = document.getElementById("entry-date");
-  const contentInput = document.getElementById("entry-content");
-  const message = document.getElementById("form-message");
   const publicList = document.getElementById("public-list");
-  const draftList = document.getElementById("draft-list");
   const publicFilter = document.getElementById("public-filter");
-  const saveButton = document.getElementById("save-button");
-  const cancelButton = document.getElementById("cancel-button");
-
-  let editingId = null;
-
-  function localDate() {
-    const now = new Date();
-    const local = new Date(now.getTime() - now.getTimezoneOffset() * 60000);
-    return local.toISOString().slice(0, 10);
-  }
-
-  dateInput.value = localDate();
-
-  function loadDrafts() {
-    try {
-      const entries = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
-      return Array.isArray(entries) ? entries.filter(entry =>
-        entry &&
-        typeof entry.id === "string" &&
-        typeof entry.title === "string" &&
-        typeof entry.content === "string"
-      ) : [];
-    } catch (error) {
-      return [];
-    }
-  }
-
-  function saveDrafts(entries) {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
-      return true;
-    } catch (error) {
-      message.textContent = "Unable to save. Please copy your writing somewhere safe.";
-      return false;
-    }
-  }
 
   function makeElement(tag, className, text) {
     const node = document.createElement(tag);
@@ -580,54 +443,11 @@ const PUBLIC_ENTRIES = [
     return node;
   }
 
-  function makeCard(entry, isDraft) {
-    const card = makeElement("article", "entry-card");
-    card.appendChild(makeElement("h3", "", entry.title || "Untitled"));
-    card.appendChild(makeElement(
-      "p",
-      "entry-meta",
-      (entry.category || "Writing") + " · " + (entry.date || "")
-    ));
-    card.appendChild(makeElement("p", "entry-content", entry.content || ""));
-
-    if (isDraft) {
-      const actions = makeElement("div", "button-row");
-
-      const edit = makeElement("button", "btn", "Edit draft");
-      edit.type = "button";
-      edit.addEventListener("click", function () {
-        editingId = entry.id;
-        categoryInput.value = entry.category;
-        titleInput.value = entry.title;
-        dateInput.value = entry.date;
-        contentInput.value = entry.content;
-        saveButton.textContent = "Update private draft";
-        cancelButton.classList.remove("hidden");
-        document.getElementById("desk-title").textContent = "Edit your draft ♡";
-        message.textContent = "Editing a private draft.";
-        document.getElementById("writing-desk").scrollIntoView({ behavior: "smooth" });
-      });
-
-      const remove = makeElement("button", "btn", "Delete draft");
-      remove.type = "button";
-      remove.addEventListener("click", function () {
-        if (!confirm("Delete this draft? This cannot be undone.")) return;
-        if (saveDrafts(loadDrafts().filter(item => item.id !== entry.id))) {
-          renderDrafts();
-        }
-      });
-
-      actions.append(edit, remove);
-      card.appendChild(actions);
-    }
-
-    return card;
-  }
-
   function renderPublic() {
     publicList.replaceChildren();
 
     const chosen = publicFilter.value;
+
     const entries = PUBLIC_ENTRIES.filter(entry =>
       entry &&
       typeof entry.title === "string" &&
@@ -639,135 +459,44 @@ const PUBLIC_ENTRIES = [
       publicList.appendChild(makeElement(
         "p",
         "empty",
-        "No published pages here yet. Your public writing will appear here. ♡"
-      ));
-      return;
-    }
-
-    entries.forEach(entry => publicList.appendChild(makeCard(entry, false)));
-  }
-
-  function renderDrafts() {
-    draftList.replaceChildren();
-    const entries = loadDrafts();
-
-    if (!entries.length) {
-      draftList.appendChild(makeElement(
-        "p", "empty", "Your private drafts will appear here when you save them. ♡"
+        "No published pages in this collection yet. Please visit again soon. ♡"
       ));
       return;
     }
 
     entries.slice().reverse().forEach(entry => {
-      draftList.appendChild(makeCard(entry, true));
+      const card = makeElement("article", "entry-card");
+
+      card.appendChild(makeElement(
+        "h3",
+        "",
+        entry.title || "Untitled"
+      ));
+
+      card.appendChild(makeElement(
+        "p",
+        "entry-meta",
+        (entry.category || "Writing") + " · " + (entry.date || "")
+      ));
+
+      card.appendChild(makeElement(
+        "p",
+        "entry-content",
+        entry.content || ""
+      ));
+
+      publicList.appendChild(card);
     });
   }
-
-  window.chooseCategory = function (category) {
-    categoryInput.value = category;
-    document.getElementById("writing-desk").scrollIntoView({ behavior: "smooth" });
-  };
 
   window.setFilter = function (category) {
     publicFilter.value = category;
     renderPublic();
   };
 
-  function resetForm() {
-    editingId = null;
-    form.reset();
-    dateInput.value = localDate();
-    saveButton.textContent = "Save private draft";
-    cancelButton.classList.add("hidden");
-    document.getElementById("desk-title").textContent = "Let's write something ♡";
-    message.textContent = "";
-  }
-
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    const title = titleInput.value.trim();
-    const content = contentInput.value;
-    const category = categoryInput.value;
-    const date = dateInput.value;
-
-    if (!title || !content.trim() || !date) {
-      message.textContent = "Please add a title, date and some writing. ♡";
-      return;
-    }
-
-    const drafts = loadDrafts();
-
-    if (editingId !== null) {
-      const index = drafts.findIndex(entry => entry.id === editingId);
-
-      if (index !== -1) {
-        drafts[index] = {
-          ...drafts[index],
-          title,
-          content,
-          category,
-          date
-        };
-      } else {
-        message.textContent = "This draft could not be found. Please start a new one.";
-        return;
-      }
-    } else {
-      drafts.push({
-        id: Date.now().toString() + Math.random().toString(36).slice(2),
-        title,
-        content,
-        category,
-        date
-      });
-    }
-
-    if (!saveDrafts(drafts)) return;
-
-    resetForm();
-    renderDrafts();
-    message.textContent = "Your private draft has been saved on this device. ♡";
-    document.getElementById("drafts").scrollIntoView({ behavior: "smooth" });
-  });
-
-  document.getElementById("clear-button").addEventListener("click", function () {
-    if (
-      (titleInput.value.trim() || contentInput.value.trim()) &&
-      !confirm("Clear the text in this writing box?")
-    ) return;
-
-    resetForm();
-  });
-
-  cancelButton.addEventListener("click", resetForm);
   publicFilter.addEventListener("change", renderPublic);
 
-  document.getElementById("backup-button").addEventListener("click", function () {
-    const drafts = loadDrafts();
-
-    if (!drafts.length) {
-      alert("There are no private drafts to back up yet. ♡");
-      return;
-    }
-
-    const blob = new Blob(
-      [JSON.stringify(drafts, null, 2)],
-      { type: "application/json;charset=utf-8" }
-    );
-
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = "Eva-Dandelion-Private-Drafts.json";
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-    URL.revokeObjectURL(url);
-  });
-
   renderPublic();
-  renderDrafts();
 })();
 </script>
 
