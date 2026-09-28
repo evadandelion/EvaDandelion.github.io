@@ -3,26 +3,25 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#fff7fa">
 <title>Eva Dandelion ♡</title>
-<meta name="description" content="A little world of feelings, poetry, stories, novels, and daydreams.">
+<meta name="description" content="A little world of diary pages, poetry, stories and dreams.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
   --bg: #fff7fa;
-  --paper: #fffdfd;
-  --pink: #f8e4ec;
-  --pink-dark: #b66a89;
-  --rose: #9c5272;
-  --text: #735e6a;
-  --muted: #aa8e9c;
+  --paper: #ffffff;
+  --pink: #f9e8ef;
+  --pink-dark: #bd7898;
+  --rose: #985775;
+  --text: #66545e;
+  --muted: #a58b98;
   --border: #f0dce5;
-  --shadow: 0 8px 30px rgba(176, 106, 137, 0.07);
 }
 
 * { box-sizing: border-box; }
@@ -38,217 +37,195 @@ body {
   color: var(--text);
   font-family: 'Quicksand', sans-serif;
   font-size: 15px;
-  line-height: 1.9;
-}
-
-button, input, textarea, select {
-  font: inherit;
-}
-
-button, a {
-  -webkit-tap-highlight-color: transparent;
+  line-height: 1.8;
 }
 
 a { color: var(--rose); }
+button, input, textarea, select { font: inherit; }
+button { cursor: pointer; }
 
 .hero {
-  padding: 58px 20px 35px;
   text-align: center;
-  background:
-    radial-gradient(circle at 12% 20%, #f7e2eb 0 2px, transparent 3px),
-    radial-gradient(circle at 86% 65%, #f7e2eb 0 2px, transparent 3px),
-    linear-gradient(180deg, #fff0f5, var(--bg));
+  padding: 42px 18px 32px;
+  background: linear-gradient(180deg, #ffedf4, #fff7fa);
 }
 
 .lotus {
-  font-size: 39px;
-  line-height: 1.4;
+  display: block;
+  width: 68px;
+  height: 60px;
+  margin: 0 auto 10px;
 }
 
 .eyebrow {
-  font-size: 10px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
   color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin: 8px 0;
 }
 
-h1, h2, h3, .serif {
+/* Only headings use the cute handwritten font */
+h1, h2, h3, .handwriting {
   font-family: 'Caveat', cursive;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 h1 {
   color: var(--rose);
-  font-size: clamp(55px, 10vw, 86px);
-  line-height: 1.1;
-  margin: 14px 0 5px;
+  font-size: clamp(54px, 10vw, 82px);
+  line-height: 1.05;
+  margin: 8px 0;
+}
+
+h2 {
+  color: var(--rose);
+  font-size: 39px;
+  line-height: 1.2;
+  margin: 8px 0 12px;
+}
+
+h3 {
+  color: var(--rose);
+  font-size: 30px;
+  line-height: 1.2;
+  margin: 6px 0;
 }
 
 .tagline {
   font-family: 'Caveat', cursive;
-  font-size: 27px;
+  font-size: 26px;
   color: var(--pink-dark);
-  margin: 8px 0 25px;
+  margin: 10px 0 18px;
 }
 
 nav {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 7px;
-  max-width: 950px;
-  margin: 20px auto 0;
-  padding: 18px 5px;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 15px 10px;
+  background: #fffafd;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
 
 nav a {
-  text-decoration: none;
   color: var(--text);
-  padding: 7px 13px;
+  text-decoration: none;
   font-size: 11px;
-  letter-spacing: 1px;
-  border-radius: 25px;
-  transition: .2s;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 24px;
 }
 
-nav a:hover {
-  background: white;
-  color: var(--rose);
-}
+nav a:hover { background: var(--pink); }
 
 main {
-  width: min(900px, 94%);
+  width: min(900px, 93%);
   margin: auto;
-  padding: 25px 0 65px;
+  padding: 24px 0 55px;
 }
 
-section {
-  scroll-margin-top: 18px;
-}
+section { scroll-margin-top: 18px; }
 
-.intro {
-  max-width: 630px;
+.welcome {
   text-align: center;
-  margin: 0 auto 28px;
-  padding: 24px 12px;
+  max-width: 650px;
+  margin: 10px auto 28px;
+  padding: 20px 12px;
 }
-
-h2 {
-  font-size: 40px;
-  line-height: 1.2;
-  color: var(--rose);
-  margin: 8px 0 12px;
-}
-
-h3 {
-  font-size: 30px;
-  color: var(--rose);
-  margin: 8px 0;
-}
-
-p { overflow-wrap: anywhere; }
 
 .paper {
   background: var(--paper);
   border: 1px solid var(--border);
-  border-radius: 15px;
-  padding: clamp(21px, 5vw, 40px);
-  margin: 25px 0;
-  box-shadow: var(--shadow);
+  border-radius: 16px;
+  padding: clamp(20px, 5vw, 38px);
+  margin: 24px 0;
+  box-shadow: 0 8px 28px rgba(160, 96, 124, 0.07);
 }
 
 .category-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: 25px;
+  gap: 14px;
+  margin-top: 20px;
 }
 
 .category-card {
   display: block;
+  padding: 22px;
   text-decoration: none;
   color: var(--text);
   background: #fffafb;
   border: 1px solid var(--border);
   border-radius: 13px;
-  padding: 24px;
-  transition: .2s;
+  transition: background .2s, transform .2s;
 }
 
 .category-card:hover {
-  background: #fdf0f5;
+  background: #fff0f6;
   transform: translateY(-2px);
 }
 
-.category-icon {
-  font-size: 27px;
-}
-
-.category-card h3 {
-  font-size: 32px;
-  margin: 6px 0;
-}
+.category-icon { font-size: 27px; }
 
 .category-card p {
-  margin: 0;
   font-size: 13px;
+  margin-bottom: 0;
 }
 
 label {
   display: block;
-  margin: 18px 0 6px;
-  color: #947185;
+  color: var(--rose);
+  font-weight: 700;
   font-size: 12px;
-  font-weight: 600;
-  letter-spacing: .5px;
+  margin: 16px 0 6px;
 }
 
 input, textarea, select {
-  width: 100%;
   display: block;
-  padding: 13px 15px;
+  width: 100%;
+  padding: 12px 14px;
   color: var(--text);
   background: #fffafb;
-  border: 1px solid #edd5df;
+  border: 1px solid var(--border);
   border-radius: 9px;
   outline: none;
 }
 
 input:focus, textarea:focus, select:focus {
-  border-color: #c88aa5;
-  box-shadow: 0 0 0 3px #f8e4ec;
+  border-color: var(--pink-dark);
+  box-shadow: 0 0 0 3px #f9e8ef;
 }
 
 textarea {
-  min-height: 270px;
+  min-height: 230px;
   resize: vertical;
-  line-height: 1.9;
-  font-family: 'Quicksand', sans-serif;
-  font-size: 15px;
+  line-height: 1.85;
 }
 
 .button-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 18px;
+  gap: 9px;
+  margin-top: 16px;
 }
 
-.btn {
+.btn, .youtube-button {
   display: inline-block;
-  padding: 10px 19px;
-  border: 1px solid #e8c6d4;
-  border-radius: 30px;
-  background: #f9e8ef;
+  padding: 10px 17px;
+  border: 1px solid #e9cad8;
+  border-radius: 25px;
+  background: var(--pink);
   color: var(--rose);
   text-decoration: none;
-  cursor: pointer;
-  transition: .2s;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background .2s;
 }
 
-.btn:hover { background: #f4dce7; }
+.btn:hover, .youtube-button:hover { background: #f3dbe6; }
 
 .btn.primary {
   background: var(--pink-dark);
@@ -258,34 +235,29 @@ textarea {
 
 .btn.primary:hover { background: var(--rose); }
 
-.btn.danger {
-  background: transparent;
-  color: #a2546c;
+.message {
+  color: var(--rose);
+  font-size: 13px;
+  min-height: 20px;
 }
 
-.message {
-  min-height: 24px;
-  font-size: 13px;
-  color: var(--rose);
+.note {
+  color: var(--muted);
+  font-size: 12px;
 }
 
 .entry-card {
-  padding: 22px;
-  background: #fffafb;
   border: 1px solid var(--border);
-  border-radius: 11px;
-  margin: 16px 0;
+  background: #fffafb;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 14px 0;
   overflow-wrap: anywhere;
 }
 
-.entry-card h3 {
-  font-size: 30px;
-  margin: 4px 0;
-}
-
 .entry-meta {
-  font-size: 11px;
   color: var(--muted);
+  font-size: 11px;
   letter-spacing: .4px;
 }
 
@@ -295,54 +267,38 @@ textarea {
   line-height: 1.9;
 }
 
-.entry-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 15px;
-}
-
-.entry-actions .btn {
-  font-size: 12px;
-  padding: 7px 13px;
-}
-
 .empty {
-  padding: 25px 10px;
-  text-align: center;
-  font-family: 'Caveat', cursive;
-  font-size: 25px;
   color: var(--muted);
+  text-align: center;
+  padding: 20px 8px;
 }
 
-.small-note {
-  color: var(--muted);
-  font-size: 12px;
+.divider {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 25px 0;
 }
+
+.hidden { display: none !important; }
 
 footer {
   text-align: center;
-  padding: 35px 20px 45px;
+  padding: 30px 18px 40px;
   border-top: 1px solid var(--border);
   color: var(--muted);
   font-size: 12px;
 }
 
-footer .signature {
-  font-family: 'Caveat', cursive;
+footer .handwriting {
   font-size: 29px;
   color: var(--pink-dark);
 }
 
-.hidden { display: none !important; }
-
-@media (max-width: 600px) {
-  .hero { padding-top: 38px; }
+@media (max-width: 560px) {
   .category-grid { grid-template-columns: 1fr; }
-  nav { gap: 3px; padding: 13px 4px; }
-  nav a { font-size: 10px; padding: 7px 9px; }
-  main { width: 94%; padding-top: 15px; }
-  h2 { font-size: 35px; }
+  nav { gap: 2px; }
+  nav a { padding: 7px 9px; font-size: 10px; }
+  .paper { padding: 21px; }
 }
 </style>
 </head>
@@ -350,188 +306,221 @@ footer .signature {
 <body>
 
 <header class="hero" id="home">
-  <div class="lotus">🪷</div>
-  <p class="eyebrow">a little personal journal</p>
+  <svg class="lotus" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pink lotus flower">
+    <g stroke="#bd7898" stroke-width="1.5" stroke-linejoin="round">
+      <path d="M50 65 C25 55 24 30 50 8 C76 30 75 55 50 65Z" fill="#e9a9c2"/>
+      <path d="M48 65 C20 65 9 48 13 30 C33 36 46 48 48 65Z" fill="#f2c9da"/>
+      <path d="M52 65 C80 65 91 48 87 30 C67 36 54 48 52 65Z" fill="#f2c9da"/>
+      <path d="M50 68 C33 55 18 59 10 53 C24 76 39 75 50 68Z" fill="#f7dce7"/>
+      <path d="M50 68 C67 55 82 59 90 53 C76 76 61 75 50 68Z" fill="#f7dce7"/>
+    </g>
+    <path d="M24 75 Q50 81 76 75" fill="none" stroke="#bd7898" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+
+  <p class="eyebrow">a little personal writing space</p>
   <h1>Eva Dandelion</h1>
   <p class="tagline">all the things I never quite say out loud ♡</p>
+  <a class="youtube-button" href="https://www.youtube.com/@creativecorner100" target="_blank" rel="noopener noreferrer">
+    ♡ Visit my YouTube channel
+  </a>
 </header>
 
 <nav aria-label="Main navigation">
   <a href="#home">HOME</a>
   <a href="#diary">MY DIARY</a>
   <a href="#collections">MY WRITING</a>
+  <a href="#public-pages">READ</a>
   <a href="#writing-desk">WRITE</a>
-  <a href="#saved-pages">SAVED PAGES</a>
+  <a href="#drafts">MY DRAFTS</a>
   <a href="#about">ABOUT</a>
 </nav>
 
 <main>
 
-<section class="intro">
-  <p class="eyebrow">dear diary,</p>
-  <h2>Welcome to my little world.</h2>
+<section class="welcome">
+  <p class="eyebrow">dear reader,</p>
+  <h2>Welcome to my little world ♡</h2>
   <p>
-    Some days are beautiful. Some are confusing. Some are just days
-    I don't know how to explain. This is where I leave a little piece
-    of my heart.
+    A little space for feelings, memories, poems, stories and dreams.
+    Some things are easier to write than to say.
   </p>
-  <p class="serif">No perfect words required. Just be yourself. ♡</p>
+  <p class="handwriting">Take a breath. Stay a while. 🌷</p>
 </section>
 
 <section id="diary" class="paper">
-  <p class="eyebrow">01 · my personal pages</p>
-  <h2>A page of my own ♡</h2>
+  <p class="eyebrow">01 · personal pages</p>
+  <h2>My Diary</h2>
   <p>
-    For the feelings I cannot explain, the memories I want to keep,
-    the days I want to forget, and the thoughts that arrive at midnight.
+    Little moments, thoughts and memories, written one page at a time.
   </p>
-  <p>Dear diary, this is my little space to be honest with myself.</p>
-  <a href="#writing-desk" class="btn"
-     onclick="chooseCategory('Diary')">Open my diary ♡</a>
+  <div class="button-row">
+    <a class="btn" href="#public-pages" onclick="setFilter('Diary')">Read published diary pages</a>
+    <a class="btn" href="#writing-desk" onclick="chooseCategory('Diary')">Write a new page</a>
+  </div>
 </section>
 
 <section id="collections" class="paper">
-  <p class="eyebrow">02 · different pieces of me</p>
-  <h2>My little collection ✿</h2>
-  <p>Every kind of writing deserves a little home of its own.</p>
+  <p class="eyebrow">02 · my little collection</p>
+  <h2>My Writing</h2>
+  <p>Different kinds of words, each with a home of their own.</p>
 
   <div class="category-grid">
-    <a class="category-card" href="#writing-desk"
-       onclick="chooseCategory('Diary')">
+    <a class="category-card" href="#public-pages" onclick="setFilter('Diary')">
       <div class="category-icon">💌</div>
       <h3>My Diary</h3>
-      <p>Feelings, memories, and little everyday moments.</p>
+      <p>Thoughts, memories and everyday moments.</p>
     </a>
-
-    <a class="category-card" href="#writing-desk"
-       onclick="chooseCategory('Poetry')">
+    <a class="category-card" href="#public-pages" onclick="setFilter('Poetry')">
       <div class="category-icon">🌷</div>
       <h3>My Poetry</h3>
-      <p>Little pieces of my heart turned into words.</p>
+      <p>Feelings shaped into little poems.</p>
     </a>
-
-    <a class="category-card" href="#writing-desk"
-       onclick="chooseCategory('Stories')">
+    <a class="category-card" href="#public-pages" onclick="setFilter('Stories')">
       <div class="category-icon">📖</div>
       <h3>My Stories</h3>
-      <p>Imaginary worlds, characters, and tales to remember.</p>
+      <p>Characters, imaginary worlds and tales.</p>
     </a>
-
-    <a class="category-card" href="#writing-desk"
-       onclick="chooseCategory('Novels')">
+    <a class="category-card" href="#public-pages" onclick="setFilter('Novels')">
       <div class="category-icon">🕯️</div>
       <h3>My Novels</h3>
-      <p>Longer dreams, chapters, and stories still growing.</p>
+      <p>Chapters and longer stories in progress.</p>
     </a>
   </div>
 </section>
 
+<section id="public-pages" class="paper">
+  <p class="eyebrow">03 · shared with you</p>
+  <h2>Published Pages ♡</h2>
+  <p>These pages are public and can be read by anyone visiting the website.</p>
+
+  <label for="public-filter">Choose a collection</label>
+  <select id="public-filter">
+    <option value="All">All published writing</option>
+    <option value="Diary">Diary</option>
+    <option value="Poetry">Poetry</option>
+    <option value="Stories">Stories</option>
+    <option value="Novels">Novels</option>
+  </select>
+
+  <div id="public-list"></div>
+</section>
+
 <section id="writing-desk" class="paper">
-  <p class="eyebrow">03 · your quiet little corner</p>
-  <h2 id="desk-heading">Let's write something ♡</h2>
-  <p>Take your time. A sentence or a whole chapter — it's up to you.</p>
+  <p class="eyebrow">04 · your writing desk</p>
+  <h2 id="desk-title">Let's write something ♡</h2>
+  <p>Write here and save your work as a private draft.</p>
 
   <form id="entry-form">
-    <label for="entry-category">Choose your category</label>
+    <label for="entry-category">Category</label>
     <select id="entry-category" required>
-      <option value="Diary">My Diary</option>
-      <option value="Poetry">My Poetry</option>
-      <option value="Stories">My Stories</option>
-      <option value="Novels">My Novels</option>
+      <option value="Diary">Diary</option>
+      <option value="Poetry">Poetry</option>
+      <option value="Stories">Stories</option>
+      <option value="Novels">Novels</option>
     </select>
 
-    <label for="entry-title">Give this page a name</label>
-    <input id="entry-title" type="text"
-      placeholder="e.g. the night I couldn't sleep..." maxlength="200" required>
+    <label for="entry-title">Title</label>
+    <input id="entry-title" maxlength="200" placeholder="Give your page a name..." required>
 
     <label for="entry-date">Date</label>
     <input id="entry-date" type="date" required>
 
-    <label for="entry-content">What's on your heart? ♡</label>
-    <textarea id="entry-content"
-      placeholder="Dear diary...&#10;&#10;Once upon a time...&#10;&#10;My words begin here."
-      required></textarea>
+    <label for="entry-content">Your words</label>
+    <textarea id="entry-content" placeholder="Dear diary... ♡" required></textarea>
 
     <div class="button-row">
-      <button class="btn primary" type="submit" id="save-button">
-        Keep this page ♡
-      </button>
-      <button class="btn" type="button" id="clear-button">
-        Clear page
-      </button>
-      <button class="btn hidden" type="button" id="cancel-button">
-        Cancel editing
-      </button>
+      <button class="btn primary" id="save-button" type="submit">Save private draft</button>
+      <button class="btn" id="clear-button" type="button">Clear page</button>
+      <button class="btn hidden" id="cancel-button" type="button">Cancel editing</button>
     </div>
-    <p class="message" id="form-message" aria-live="polite"></p>
+    <p id="form-message" class="message" aria-live="polite"></p>
   </form>
+
+  <hr class="divider">
+
+  <h3>How to publish your writing</h3>
+  <p>
+    GitHub Pages cannot automatically publish text from this writing box.
+    To publish an entry for everyone, add it to the PUBLIC_ENTRIES list in
+    this file and commit the change on GitHub. It will then appear under
+    Published Pages.
+  </p>
+  <p class="note">
+    Anything added to PUBLIC_ENTRIES is public. Never add private thoughts
+    or sensitive information there.
+  </p>
 </section>
 
-<section id="saved-pages" class="paper">
-  <p class="eyebrow">04 · little pieces of my heart</p>
-  <h2>My saved pages ♡</h2>
-  <p>Everything you've written, gathered in one place.</p>
-
-  <label for="filter-category">Find your pages</label>
-  <select id="filter-category">
-    <option value="All">All my writing</option>
-    <option value="Diary">My Diary</option>
-    <option value="Poetry">My Poetry</option>
-    <option value="Stories">My Stories</option>
-    <option value="Novels">My Novels</option>
-  </select>
-
-  <div id="entries-list"></div>
-
+<section id="drafts" class="paper">
+  <p class="eyebrow">05 · saved on this device</p>
+  <h2>My Private Drafts</h2>
+  <p>These drafts are saved in this browser and are not published on the website.</p>
+  <div id="draft-list"></div>
   <div class="button-row">
-    <button class="btn" id="export-button" type="button">
-      Back up my writings ♡
-    </button>
+    <button class="btn" id="backup-button" type="button">Download draft backup</button>
   </div>
-  <p class="small-note">
-    Download a backup occasionally so you have another copy of your work.
+  <p class="note">
+    Drafts are not password-protected or encrypted. Clearing browser data
+    can erase them, so download a backup of anything important.
   </p>
 </section>
 
 <section id="about" class="paper">
-  <p class="eyebrow">05 · a little note</p>
-  <h2>About Eva Dandelion ♡</h2>
+  <p class="eyebrow">06 · about this space</p>
+  <h2>About Eva Dandelion</h2>
   <p>
-    A pen name, a creative heart, and a tiny world filled with
-    thoughts, feelings, poems, stories, and daydreams.
+    A pen name and a little corner for poetry, stories, diary pages and daydreams.
+    A place where words can grow at their own pace.
   </p>
-  <p class="serif">
-    Somewhere between flowers and forgotten thoughts,
-    these pages belong to Eva Dandelion.
-  </p>
-  <p class="small-note">
-    The website is public, but entries created here are saved in this
-    browser on this device. They are not encrypted or password-protected.
-    Anyone with access to this browser profile may be able to read them.
-    Avoid writing highly sensitive secrets here.
-  </p>
+  <p class="handwriting">With love, Eva ♡</p>
+  <a class="youtube-button" href="https://www.youtube.com/@creativecorner100" target="_blank" rel="noopener noreferrer">
+    Find me on YouTube ↗
+  </a>
 </section>
 
 </main>
 
 <footer>
-  <div class="lotus">🪷</div>
-  <div class="signature">with love, Eva ♡</div>
-  <p>a little world made of words, feelings & daydreams</p>
-  <p>grow gently, at your own pace.</p>
-  <p>
-    <a href="https://www.youtube.com/@creativecorner100"
-       target="_blank" rel="noopener noreferrer">
-       Visit my creative corner on YouTube ↗
-    </a>
-  </p>
+  <svg class="lotus" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pink lotus flower">
+    <g stroke="#bd7898" stroke-width="1.5" stroke-linejoin="round">
+      <path d="M50 65 C25 55 24 30 50 8 C76 30 75 55 50 65Z" fill="#e9a9c2"/>
+      <path d="M48 65 C20 65 9 48 13 30 C33 36 46 48 48 65Z" fill="#f2c9da"/>
+      <path d="M52 65 C80 65 91 48 87 30 C67 36 54 48 52 65Z" fill="#f2c9da"/>
+      <path d="M50 68 C33 55 18 59 10 53 C24 76 39 75 50 68Z" fill="#f7dce7"/>
+      <path d="M50 68 C67 55 82 59 90 53 C76 76 61 75 50 68Z" fill="#f7dce7"/>
+    </g>
+    <path d="M24 75 Q50 81 76 75" fill="none" stroke="#bd7898" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+  <p class="handwriting">Eva Dandelion ♡</p>
+  <p>A little world made of words, feelings and daydreams.</p>
+  <a href="https://www.youtube.com/@creativecorner100" target="_blank" rel="noopener noreferrer">
+    YouTube · @creativecorner100
+  </a>
 </footer>
 
 <script>
+/*
+  PUBLIC ENTRIES:
+  Entries here are visible to everyone visiting your website.
+  Only add writing you want to share publicly.
+
+  Example:
+  {
+    title: "My First Page",
+    category: "Diary",
+    date: "2026-09-28",
+    content: "Today I decided to share a little piece of my world."
+  }
+*/
+
+const PUBLIC_ENTRIES = [
+  // Add public entries here, separated by commas.
+];
+
 (function () {
   "use strict";
 
-  const STORAGE_KEY = "evaDandelionSoftWritingV3";
+  const STORAGE_KEY = "evaDandelionPrivateDraftsV5";
 
   const form = document.getElementById("entry-form");
   const categoryInput = document.getElementById("entry-category");
@@ -539,28 +528,28 @@ footer .signature {
   const dateInput = document.getElementById("entry-date");
   const contentInput = document.getElementById("entry-content");
   const message = document.getElementById("form-message");
-  const list = document.getElementById("entries-list");
-  const filter = document.getElementById("filter-category");
+  const publicList = document.getElementById("public-list");
+  const draftList = document.getElementById("draft-list");
+  const publicFilter = document.getElementById("public-filter");
   const saveButton = document.getElementById("save-button");
   const cancelButton = document.getElementById("cancel-button");
 
   let editingId = null;
 
-  function todayString() {
+  function localDate() {
     const now = new Date();
-    const local = new Date(
-      now.getTime() - now.getTimezoneOffset() * 60000
-    );
+    const local = new Date(now.getTime() - now.getTimezoneOffset() * 60000);
     return local.toISOString().slice(0, 10);
   }
 
-  dateInput.value = todayString();
+  dateInput.value = localDate();
 
-  function loadEntries() {
+  function loadDrafts() {
     try {
-      const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
-      return Array.isArray(parsed) ? parsed.filter(entry =>
-        entry && typeof entry.id === "string" &&
+      const entries = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+      return Array.isArray(entries) ? entries.filter(entry =>
+        entry &&
+        typeof entry.id === "string" &&
         typeof entry.title === "string" &&
         typeof entry.content === "string"
       ) : [];
@@ -569,52 +558,125 @@ footer .signature {
     }
   }
 
-  function storeEntries(entries) {
+  function saveDrafts(entries) {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
       return true;
     } catch (error) {
-      message.textContent =
-        "Couldn't save this page. Please copy your writing somewhere safe.";
+      message.textContent = "Unable to save. Please copy your writing somewhere safe.";
       return false;
     }
   }
 
+  function makeElement(tag, className, text) {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text !== undefined) node.textContent = text;
+    return node;
+  }
+
+  function makeCard(entry, isDraft) {
+    const card = makeElement("article", "entry-card");
+    card.appendChild(makeElement("h3", "", entry.title || "Untitled"));
+    card.appendChild(makeElement(
+      "p",
+      "entry-meta",
+      (entry.category || "Writing") + " · " + (entry.date || "")
+    ));
+    card.appendChild(makeElement("p", "entry-content", entry.content || ""));
+
+    if (isDraft) {
+      const actions = makeElement("div", "button-row");
+
+      const edit = makeElement("button", "btn", "Edit draft");
+      edit.type = "button";
+      edit.addEventListener("click", function () {
+        editingId = entry.id;
+        categoryInput.value = entry.category;
+        titleInput.value = entry.title;
+        dateInput.value = entry.date;
+        contentInput.value = entry.content;
+        saveButton.textContent = "Update private draft";
+        cancelButton.classList.remove("hidden");
+        document.getElementById("desk-title").textContent = "Edit your draft ♡";
+        message.textContent = "Editing a private draft.";
+        document.getElementById("writing-desk").scrollIntoView({ behavior: "smooth" });
+      });
+
+      const remove = makeElement("button", "btn", "Delete draft");
+      remove.type = "button";
+      remove.addEventListener("click", function () {
+        if (!confirm("Delete this draft? This cannot be undone.")) return;
+        if (saveDrafts(loadDrafts().filter(item => item.id !== entry.id))) {
+          renderDrafts();
+        }
+      });
+
+      actions.append(edit, remove);
+      card.appendChild(actions);
+    }
+
+    return card;
+  }
+
+  function renderPublic() {
+    publicList.replaceChildren();
+
+    const chosen = publicFilter.value;
+    const entries = PUBLIC_ENTRIES.filter(entry =>
+      entry &&
+      typeof entry.title === "string" &&
+      typeof entry.content === "string" &&
+      (chosen === "All" || entry.category === chosen)
+    );
+
+    if (!entries.length) {
+      publicList.appendChild(makeElement(
+        "p",
+        "empty",
+        "No published pages here yet. Your public writing will appear here. ♡"
+      ));
+      return;
+    }
+
+    entries.forEach(entry => publicList.appendChild(makeCard(entry, false)));
+  }
+
+  function renderDrafts() {
+    draftList.replaceChildren();
+    const entries = loadDrafts();
+
+    if (!entries.length) {
+      draftList.appendChild(makeElement(
+        "p", "empty", "Your private drafts will appear here when you save them. ♡"
+      ));
+      return;
+    }
+
+    entries.slice().reverse().forEach(entry => {
+      draftList.appendChild(makeCard(entry, true));
+    });
+  }
+
   window.chooseCategory = function (category) {
     categoryInput.value = category;
+    document.getElementById("writing-desk").scrollIntoView({ behavior: "smooth" });
+  };
 
-    const headings = {
-      Diary: "A page of my own ♡",
-      Poetry: "Little pieces of my heart ♡",
-      Stories: "Once upon a feeling ♡",
-      Novels: "One chapter at a time ♡"
-    };
-
-    document.getElementById("desk-heading").textContent =
-      headings[category] || "Let's write something ♡";
-    message.textContent = "";
+  window.setFilter = function (category) {
+    publicFilter.value = category;
+    renderPublic();
   };
 
   function resetForm() {
     editingId = null;
     form.reset();
-    dateInput.value = todayString();
-    saveButton.textContent = "Keep this page ♡";
+    dateInput.value = localDate();
+    saveButton.textContent = "Save private draft";
     cancelButton.classList.add("hidden");
-    document.getElementById("desk-heading").textContent =
-      "Let's write something ♡";
+    document.getElementById("desk-title").textContent = "Let's write something ♡";
     message.textContent = "";
   }
-
-  document.getElementById("clear-button").addEventListener("click", function () {
-    if ((titleInput.value.trim() || contentInput.value.trim()) &&
-        !confirm("Clear this writing box? Unsaved text will be lost.")) {
-      return;
-    }
-    resetForm();
-  });
-
-  cancelButton.addEventListener("click", resetForm);
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -625,157 +687,82 @@ footer .signature {
     const date = dateInput.value;
 
     if (!title || !content.trim() || !date) {
-      message.textContent = "Add a title, date, and some words first. ♡";
+      message.textContent = "Please add a title, date and some writing. ♡";
       return;
     }
 
-    const entries = loadEntries();
-    const now = new Date().toISOString();
+    const drafts = loadDrafts();
 
     if (editingId !== null) {
-      const index = entries.findIndex(entry => entry.id === editingId);
+      const index = drafts.findIndex(entry => entry.id === editingId);
 
       if (index !== -1) {
-        entries[index] = {
-          ...entries[index],
+        drafts[index] = {
+          ...drafts[index],
           title,
           content,
           category,
-          date,
-          updatedAt: now
+          date
         };
+      } else {
+        message.textContent = "This draft could not be found. Please start a new one.";
+        return;
       }
     } else {
-      entries.unshift({
+      drafts.push({
         id: Date.now().toString() + Math.random().toString(36).slice(2),
         title,
         content,
         category,
-        date,
-        createdAt: now,
-        updatedAt: now
+        date
       });
     }
 
-    if (!storeEntries(entries)) return;
+    if (!saveDrafts(drafts)) return;
 
     resetForm();
-    filter.value = "All";
-    renderEntries();
-    message.textContent = "";
-    document.getElementById("saved-pages").scrollIntoView({
-      behavior: "smooth"
-    });
+    renderDrafts();
+    message.textContent = "Your private draft has been saved on this device. ♡";
+    document.getElementById("drafts").scrollIntoView({ behavior: "smooth" });
   });
 
-  function makeElement(tag, className, text) {
-    const element = document.createElement(tag);
-    if (className) element.className = className;
-    if (text !== undefined) element.textContent = text;
-    return element;
-  }
+  document.getElementById("clear-button").addEventListener("click", function () {
+    if (
+      (titleInput.value.trim() || contentInput.value.trim()) &&
+      !confirm("Clear the text in this writing box?")
+    ) return;
 
-  function renderEntries() {
-    list.replaceChildren();
+    resetForm();
+  });
 
-    const selected = filter.value;
-    const entries = loadEntries().filter(entry =>
-      selected === "All" || entry.category === selected
-    );
+  cancelButton.addEventListener("click", resetForm);
+  publicFilter.addEventListener("change", renderPublic);
 
-    if (!entries.length) {
-      list.appendChild(makeElement(
-        "p",
-        "empty",
-        "Your little pages will appear here when you save them. ♡"
-      ));
+  document.getElementById("backup-button").addEventListener("click", function () {
+    const drafts = loadDrafts();
+
+    if (!drafts.length) {
+      alert("There are no private drafts to back up yet. ♡");
       return;
     }
-
-    entries.sort((a, b) =>
-      (b.updatedAt || b.createdAt || "").localeCompare(
-        a.updatedAt || a.createdAt || ""
-      )
-    );
-
-    entries.forEach(entry => {
-      const card = makeElement("article", "entry-card");
-      const heading = makeElement("h3", "", entry.title);
-      const meta = makeElement(
-        "p",
-        "entry-meta",
-        entry.category + " · " + entry.date
-      );
-      const body = makeElement("p", "entry-content", entry.content);
-      const actions = makeElement("div", "entry-actions");
-
-      const edit = makeElement("button", "btn", "Edit page");
-      edit.type = "button";
-      edit.addEventListener("click", function () {
-        editingId = entry.id;
-        categoryInput.value = entry.category;
-        titleInput.value = entry.title;
-        dateInput.value = entry.date;
-        contentInput.value = entry.content;
-        saveButton.textContent = "Save changes ♡";
-        cancelButton.classList.remove("hidden");
-        document.getElementById("desk-heading").textContent =
-          "Revisiting my words ♡";
-        message.textContent = "You're editing a saved page.";
-        document.getElementById("writing-desk").scrollIntoView({
-          behavior: "smooth"
-        });
-      });
-
-      const remove = makeElement("button", "btn danger", "Delete page");
-      remove.type = "button";
-      remove.addEventListener("click", function () {
-        if (!confirm("Delete this page? This cannot be undone.")) return;
-
-        const remaining = loadEntries().filter(item => item.id !== entry.id);
-        if (storeEntries(remaining)) renderEntries();
-      });
-
-      actions.append(edit, remove);
-      card.append(heading, meta, body, actions);
-      list.appendChild(card);
-    });
-  }
-
-  filter.addEventListener("change", renderEntries);
-
-  document.getElementById("export-button").addEventListener("click", function () {
-    const entries = loadEntries();
-
-    if (!entries.length) {
-      alert("You haven't saved any pages yet. ♡");
-      return;
-    }
-
-    const backup = entries.map(entry =>
-      "TITLE: " + entry.title + "\n" +
-      "CATEGORY: " + entry.category + "\n" +
-      "DATE: " + entry.date + "\n\n" +
-      entry.content + "\n\n" +
-      "----------------------------------------\n"
-    ).join("\n");
 
     const blob = new Blob(
-      ["EVA DANDELION — MY WRITINGS\n\n" + backup],
-      { type: "text/plain;charset=utf-8" }
+      [JSON.stringify(drafts, null, 2)],
+      { type: "application/json;charset=utf-8" }
     );
 
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = "Eva-Dandelion-Writing-Backup.txt";
+    link.download = "Eva-Dandelion-Private-Drafts.json";
     document.body.appendChild(link);
     link.click();
     link.remove();
     URL.revokeObjectURL(url);
   });
 
-  renderEntries();
+  renderPublic();
+  renderDrafts();
 })();
 </script>
 
