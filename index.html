@@ -1,504 +1,797 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#fff7fa">
-<title>Eva Dandelion ♡</title>
-<meta name="description" content="A little world of diary pages, poetry, stories and dreams.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff0f5">
+  <meta name="description" content="Eva Dandelion — a little pink corner for diaries, poetry, stories and novels.">
+  <title>Eva Dandelion 🌷</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-:root {
-  --bg: #fff7fa;
-  --paper: #ffffff;
-  --pink: #f9e8ef;
-  --pink-dark: #bd7898;
-  --rose: #985775;
-  --text: #66545e;
-  --muted: #a58b98;
-  --border: #f0dce5;
-}
+  <style>
+    :root {
+      --pink: #f6b9cc;
+      --deep-pink: #c75b85;
+      --soft-pink: #fff0f5;
+      --pale-pink: #fff8fa;
+      --rose: #f9dce6;
+      --text: #624451;
+      --muted: #947581;
+      --white: #ffffff;
+      --shadow: 0 8px 28px rgba(174, 99, 127, 0.10);
+    }
 
-* { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 20px;
-}
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
 
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Quicksand', sans-serif;
-  font-size: 15px;
-  line-height: 1.8;
-}
+    body {
+      font-family: "Quicksand", sans-serif;
+      color: var(--text);
+      background: var(--pale-pink);
+      line-height: 1.8;
+    }
 
-a { color: var(--rose); }
+    a {
+      color: var(--deep-pink);
+      text-decoration: none;
+    }
 
-.hero {
-  text-align: center;
-  padding: 42px 18px 32px;
-  background: linear-gradient(180deg, #ffedf4, #fff7fa);
-}
+    a:hover {
+      color: #a53d68;
+    }
 
-.lotus {
-  display: block;
-  width: 68px;
-  height: 60px;
-  margin: 0 auto 10px;
-}
+    h1, h2, h3, .script {
+      font-family: "Caveat", cursive;
+      font-weight: 600;
+      line-height: 1.2;
+    }
 
-.eyebrow {
-  color: var(--muted);
-  font-size: 10px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  margin: 8px 0;
-}
+    button {
+      font-family: inherit;
+    }
 
-h1, h2, h3, .handwriting {
-  font-family: 'Caveat', cursive;
-  font-weight: 600;
-}
+    .top-note {
+      text-align: center;
+      padding: 9px 12px;
+      background: #f8dce6;
+      color: #86566a;
+      font-size: 0.82rem;
+      letter-spacing: 0.5px;
+    }
 
-h1 {
-  color: var(--rose);
-  font-size: clamp(54px, 10vw, 82px);
-  line-height: 1.05;
-  margin: 8px 0;
-}
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 248, 250, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #f6e1e8;
+    }
 
-h2 {
-  color: var(--rose);
-  font-size: 39px;
-  line-height: 1.2;
-  margin: 8px 0 12px;
-}
+    .header-inner {
+      max-width: 1100px;
+      margin: auto;
+      padding: 13px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+    }
 
-h3 {
-  color: var(--rose);
-  font-size: 30px;
-  line-height: 1.2;
-  margin: 6px 0;
-}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--deep-pink);
+      flex-shrink: 0;
+    }
 
-.tagline {
-  font-family: 'Caveat', cursive;
-  font-size: 26px;
-  color: var(--pink-dark);
-  margin: 10px 0 18px;
-}
+    .lotus {
+      width: 39px;
+      height: 39px;
+      color: var(--deep-pink);
+    }
 
-nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 5px;
-  padding: 15px 10px;
-  background: #fffafd;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
+    .brand-name {
+      font-family: "Caveat", cursive;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1;
+    }
 
-nav a {
-  color: var(--text);
-  text-decoration: none;
-  font-size: 11px;
-  font-weight: 700;
-  padding: 8px 12px;
-  border-radius: 24px;
-}
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 7px 18px;
+    }
 
-nav a:hover { background: var(--pink); }
+    nav a {
+      color: var(--text);
+      font-size: 0.85rem;
+      font-weight: 700;
+      transition: color 0.2s;
+    }
 
-main {
-  width: min(900px, 93%);
-  margin: auto;
-  padding: 24px 0 55px;
-}
+    nav a:hover {
+      color: var(--deep-pink);
+    }
 
-section { scroll-margin-top: 18px; }
+    .hero {
+      min-height: 460px;
+      padding: 75px 22px 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background:
+        radial-gradient(circle at 15% 25%, rgba(255,255,255,0.9), transparent 22%),
+        radial-gradient(circle at 85% 70%, rgba(255,255,255,0.7), transparent 20%),
+        linear-gradient(135deg, #fff0f5, #f9dce6, #fff5f8);
+      overflow: hidden;
+    }
 
-.welcome {
-  text-align: center;
-  max-width: 650px;
-  margin: 10px auto 28px;
-  padding: 20px 12px;
-}
+    .hero-content {
+      max-width: 760px;
+    }
 
-.paper {
-  background: var(--paper);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: clamp(20px, 5vw, 38px);
-  margin: 24px 0;
-  box-shadow: 0 8px 28px rgba(160, 96, 124, 0.07);
-}
+    .hero-lotus {
+      width: 70px;
+      height: 70px;
+      color: var(--deep-pink);
+      margin-bottom: 8px;
+    }
 
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
+    .hero h1 {
+      font-size: clamp(3.6rem, 9vw, 6.5rem);
+      color: #bd547d;
+      margin-bottom: 14px;
+    }
 
-.category-card {
-  display: block;
-  padding: 22px;
-  text-decoration: none;
-  color: var(--text);
-  background: #fffafb;
-  border: 1px solid var(--border);
-  border-radius: 13px;
-  transition: background .2s, transform .2s;
-}
+    .hero p {
+      max-width: 570px;
+      margin: 0 auto 24px;
+      color: #805a6b;
+      font-size: 1rem;
+    }
 
-.category-card:hover {
-  background: #fff0f6;
-  transform: translateY(-2px);
-}
+    .hero-note {
+      font-family: "Caveat", cursive;
+      font-size: 1.8rem;
+      color: #bd547d;
+      margin-bottom: 25px;
+    }
 
-.category-icon { font-size: 27px; }
+    .button-link {
+      display: inline-block;
+      background: var(--deep-pink);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-weight: 700;
+      box-shadow: 0 5px 15px rgba(199, 91, 133, 0.2);
+      transition: transform 0.2s, background 0.2s;
+    }
 
-.category-card p {
-  font-size: 13px;
-  margin-bottom: 0;
-}
+    .button-link:hover {
+      background: #ac456f;
+      color: white;
+      transform: translateY(-2px);
+    }
 
-select {
-  display: block;
-  width: 100%;
-  padding: 12px 14px;
-  color: var(--text);
-  background: #fffafb;
-  border: 1px solid var(--border);
-  border-radius: 9px;
-  font: inherit;
-  margin: 12px 0 20px;
-}
+    .section {
+      max-width: 1050px;
+      margin: auto;
+      padding: 72px 22px;
+    }
 
-.entry-card {
-  border: 1px solid var(--border);
-  background: #fffafb;
-  border-radius: 12px;
-  padding: 20px;
-  margin: 14px 0;
-  overflow-wrap: anywhere;
-}
+    .section-heading {
+      text-align: center;
+      margin-bottom: 34px;
+    }
 
-.entry-meta {
-  color: var(--muted);
-  font-size: 11px;
-  letter-spacing: .4px;
-}
+    .section-heading h2 {
+      font-size: clamp(2.7rem, 6vw, 4rem);
+      color: #bd547d;
+      margin-bottom: 7px;
+    }
 
-.entry-content {
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-  line-height: 1.9;
-}
+    .section-heading p {
+      max-width: 610px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
 
-.empty {
-  color: var(--muted);
-  text-align: center;
-  padding: 20px 8px;
-}
+    .welcome-card {
+      background: white;
+      border: 1px solid #f5dce5;
+      border-radius: 25px;
+      padding: 32px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      max-width: 780px;
+      margin: auto;
+    }
 
-.youtube-button {
-  display: inline-block;
-  padding: 10px 17px;
-  border: 1px solid #e9cad8;
-  border-radius: 25px;
-  background: var(--pink);
-  color: var(--rose);
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 700;
-}
+    .welcome-card h3 {
+      color: var(--deep-pink);
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
 
-.youtube-button:hover { background: #f3dbe6; }
+    .welcome-card p + p {
+      margin-top: 12px;
+    }
 
-.handwriting {
-  font-size: 29px;
-  color: var(--pink-dark);
-}
+    .diary-section {
+      background: #fff0f5;
+      border-top: 1px solid #f8e0e8;
+      border-bottom: 1px solid #f8e0e8;
+    }
 
-footer {
-  text-align: center;
-  padding: 30px 18px 40px;
-  border-top: 1px solid var(--border);
-  color: var(--muted);
-  font-size: 12px;
-}
+    .diary-section .section {
+      padding-top: 70px;
+      padding-bottom: 75px;
+    }
 
-footer .lotus {
-  margin-top: 8px;
-}
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
 
-@media (max-width: 560px) {
-  .category-grid { grid-template-columns: 1fr; }
-  nav { gap: 2px; }
-  nav a { padding: 7px 9px; font-size: 10px; }
-  .paper { padding: 21px; }
-}
-</style>
+    .filter-button {
+      border: 1px solid #edc3d2;
+      background: white;
+      color: #9e5976;
+      padding: 9px 17px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.86rem;
+      transition: all 0.2s;
+    }
+
+    .filter-button:hover,
+    .filter-button.active {
+      background: var(--deep-pink);
+      color: white;
+      border-color: var(--deep-pink);
+    }
+
+    .entries {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 23px;
+      align-items: start;
+    }
+
+    .entry-card {
+      background: white;
+      border: 1px solid #f4dce5;
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: var(--shadow);
+      overflow-wrap: anywhere;
+    }
+
+    .entry-category {
+      display: inline-block;
+      color: #a74e73;
+      background: #fff0f5;
+      border: 1px solid #f7dce6;
+      padding: 4px 11px;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .entry-card h3 {
+      font-size: 2rem;
+      color: #bd547d;
+      margin-bottom: 5px;
+    }
+
+    .entry-date {
+      font-size: 0.78rem;
+      color: #a18490;
+      margin-bottom: 16px;
+    }
+
+    .entry-content {
+      white-space: pre-wrap;
+      font-size: 0.94rem;
+      line-height: 1.9;
+    }
+
+    .empty-message {
+      text-align: center;
+      color: var(--muted);
+      padding: 30px;
+      grid-column: 1 / -1;
+    }
+
+    .writing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 20px;
+    }
+
+    .writing-card {
+      background: white;
+      border: 1px solid #f3dce5;
+      border-radius: 22px;
+      padding: 27px 22px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .writing-symbol {
+      display: block;
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .writing-card h3 {
+      color: var(--deep-pink);
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .writing-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .youtube-section {
+      background: linear-gradient(135deg, #fff0f5, #fbe0e9);
+      border-top: 1px solid #f5dce5;
+      border-bottom: 1px solid #f5dce5;
+    }
+
+    .youtube-card {
+      max-width: 650px;
+      margin: auto;
+      background: white;
+      border: 1px solid #f4dce5;
+      border-radius: 24px;
+      padding: 34px 25px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .youtube-card h3 {
+      color: var(--deep-pink);
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .youtube-card p {
+      margin-bottom: 22px;
+    }
+
+    .about-card {
+      max-width: 760px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 25px;
+      background: white;
+      border: 1px solid #f5dce5;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .about-card h3 {
+      color: var(--deep-pink);
+      font-size: 2.4rem;
+      margin-bottom: 12px;
+    }
+
+    .about-card p + p {
+      margin-top: 12px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 20px;
+      background: #f8dce6;
+      color: #85576a;
+      font-size: 0.85rem;
+    }
+
+    footer .footer-name {
+      font-family: "Caveat", cursive;
+      font-size: 2rem;
+      color: #a74770;
+      margin-bottom: 4px;
+    }
+
+    footer p + p {
+      margin-top: 5px;
+    }
+
+    .tiny-lotus {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+      color: var(--deep-pink);
+    }
+
+    @media (max-width: 720px) {
+      .header-inner {
+        flex-direction: column;
+        padding: 12px 14px;
+        gap: 12px;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 8px 15px;
+      }
+
+      nav a {
+        font-size: 0.8rem;
+      }
+
+      .hero {
+        min-height: 400px;
+        padding: 60px 20px;
+      }
+
+      .section {
+        padding: 55px 17px;
+      }
+
+      .welcome-card,
+      .about-card {
+        padding: 25px 20px;
+      }
+
+      .entries {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header class="hero" id="home">
-  <svg class="lotus" viewBox="0 0 100 80"
-       xmlns="http://www.w3.org/2000/svg" role="img"
-       aria-label="Pink lotus flower">
-    <g stroke="#bd7898" stroke-width="1.5" stroke-linejoin="round">
-      <path d="M50 65 C25 55 24 30 50 8 C76 30 75 55 50 65Z" fill="#e9a9c2"/>
-      <path d="M48 65 C20 65 9 48 13 30 C33 36 46 48 48 65Z" fill="#f2c9da"/>
-      <path d="M52 65 C80 65 91 48 87 30 C67 36 54 48 52 65Z" fill="#f2c9da"/>
-      <path d="M50 68 C33 55 18 59 10 53 C24 76 39 75 50 68Z" fill="#f7dce7"/>
-      <path d="M50 68 C67 55 82 59 90 53 C76 76 61 75 50 68Z" fill="#f7dce7"/>
-    </g>
-    <path d="M24 75 Q50 81 76 75" fill="none" stroke="#bd7898" stroke-width="2" stroke-linecap="round"/>
-  </svg>
-
-  <p class="eyebrow">a little personal writing space</p>
-  <h1>Eva Dandelion</h1>
-  <p class="tagline">all the things I never quite say out loud ♡</p>
-
-  <a class="youtube-button"
-     href="https://www.youtube.com/@creativecorner100"
-     target="_blank" rel="noopener noreferrer">
-    ♡ Visit my YouTube channel
-  </a>
-</header>
-
-<nav aria-label="Main navigation">
-  <a href="#home">HOME</a>
-  <a href="#diary">MY DIARY</a>
-  <a href="#collections">MY WRITING</a>
-  <a href="#public-pages">READ</a>
-  <a href="#about">ABOUT</a>
-</nav>
-
-<main>
-
-<section class="welcome">
-  <p class="eyebrow">dear reader,</p>
-  <h2>Welcome to my little world ♡</h2>
-  <p>
-    A little space for feelings, memories, poems, stories and dreams.
-    Some things are easier to write than to say.
-  </p>
-  <p class="handwriting">Take a breath. Stay a while. 🌷</p>
-</section>
-
-<section id="diary" class="paper">
-  <p class="eyebrow">01 · personal pages</p>
-  <h2>My Diary</h2>
-  <p>
-    Little moments, thoughts and memories, written one page at a time.
-  </p>
-  <a class="youtube-button" href="#public-pages"
-     onclick="setFilter('Diary')">
-    Read published diary pages ♡
-  </a>
-</section>
-
-<section id="collections" class="paper">
-  <p class="eyebrow">02 · my little collection</p>
-  <h2>My Writing</h2>
-  <p>Different kinds of words, each with a home of their own.</p>
-
-  <div class="category-grid">
-    <a class="category-card" href="#public-pages"
-       onclick="setFilter('Diary')">
-      <div class="category-icon">💌</div>
-      <h3>My Diary</h3>
-      <p>Thoughts, memories and everyday moments.</p>
-    </a>
-
-    <a class="category-card" href="#public-pages"
-       onclick="setFilter('Poetry')">
-      <div class="category-icon">🌷</div>
-      <h3>My Poetry</h3>
-      <p>Feelings shaped into little poems.</p>
-    </a>
-
-    <a class="category-card" href="#public-pages"
-       onclick="setFilter('Stories')">
-      <div class="category-icon">📖</div>
-      <h3>My Stories</h3>
-      <p>Characters, imaginary worlds and tales.</p>
-    </a>
-
-    <a class="category-card" href="#public-pages"
-       onclick="setFilter('Novels')">
-      <div class="category-icon">🕯️</div>
-      <h3>My Novels</h3>
-      <p>Chapters and longer stories in progress.</p>
-    </a>
+  <div class="top-note">
+    a little corner of the internet, made with love ♡
   </div>
-</section>
 
-<section id="public-pages" class="paper">
-  <p class="eyebrow">03 · shared with you</p>
-  <h2>Published Pages ♡</h2>
-  <p>Settle in and enjoy my writing. Thank you for being here.</p>
+  <header>
+    <div class="header-inner">
+      <a class="brand" href="#home" aria-label="Eva Dandelion home">
+        <svg class="lotus" viewBox="0 0 100 100" fill="none"
+             xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M50 77 C27 65 16 46 26 25 C41 35 49 53 50 77Z"
+                stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M50 77 C73 65 84 46 74 25 C59 35 51 53 50 77Z"
+                stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M50 77 C34 59 36 34 50 15 C64 34 66 59 50 77Z"
+                stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M21 62 C30 72 39 77 50 80 C61 77 70 72 79 62"
+                stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          <path d="M35 86 H65"
+                stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-name">Eva Dandelion</span>
+      </a>
 
-  <label for="public-filter">Choose a collection</label>
-  <select id="public-filter">
-    <option value="All">All published writing</option>
-    <option value="Diary">Diary</option>
-    <option value="Poetry">Poetry</option>
-    <option value="Stories">Stories</option>
-    <option value="Novels">Novels</option>
-  </select>
+      <nav aria-label="Main navigation">
+        <a href="#home">HOME</a>
+        <a href="#diary">MY DIARY</a>
+        <a href="#writing">MY WRITING</a>
+        <a href="#read">READ</a>
+        <a href="#about">ABOUT</a>
+      </nav>
+    </div>
+  </header>
 
-  <div id="public-list" aria-live="polite"></div>
-</section>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <svg class="hero-lotus" viewBox="0 0 100 100" fill="none"
+             xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M50 77 C27 65 16 46 26 25 C41 35 49 53 50 77Z"
+                stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M50 77 C73 65 84 46 74 25 C59 35 51 53 50 77Z"
+                stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M50 77 C34 59 36 34 50 15 C64 34 66 59 50 77Z"
+                stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M21 62 C30 72 39 77 50 80 C61 77 70 72 79 62"
+                stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          <path d="M35 86 H65"
+                stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        </svg>
 
-<section id="about" class="paper">
-  <p class="eyebrow">04 · about this space</p>
-  <h2>About Eva Dandelion</h2>
-  <p>
-    A pen name and a little corner for poetry, stories, diary pages and daydreams.
-    A place where words can grow at their own pace.
-  </p>
-  <p class="handwriting">With love, Eva ♡</p>
-  <a class="youtube-button"
-     href="https://www.youtube.com/@creativecorner100"
-     target="_blank" rel="noopener noreferrer">
-    Find me on YouTube ↗
-  </a>
-</section>
+        <h1>Eva Dandelion</h1>
+        <p>
+          A tiny pink universe filled with thoughts, little adventures,
+          poetry, stories and all the things that make life feel like a book.
+        </p>
+        <div class="hero-note">blooming one page at a time ♡</div>
+        <a class="button-link" href="#diary">Enter My Little World</a>
+      </div>
+    </section>
 
-</main>
+    <section class="section" id="welcome">
+      <div class="section-heading">
+        <h2>Welcome, Tulips!</h2>
+        <p>Make yourself comfy. There is always room for one more reader here.</p>
+      </div>
 
-<footer>
-  <svg class="lotus" viewBox="0 0 100 80"
-       xmlns="http://www.w3.org/2000/svg" role="img"
-       aria-label="Pink lotus flower">
-    <g stroke="#bd7898" stroke-width="1.5" stroke-linejoin="round">
-      <path d="M50 65 C25 55 24 30 50 8 C76 30 75 55 50 65Z" fill="#e9a9c2"/>
-      <path d="M48 65 C20 65 9 48 13 30 C33 36 46 48 48 65Z" fill="#f2c9da"/>
-      <path d="M52 65 C80 65 91 48 87 30 C67 36 54 48 52 65Z" fill="#f2c9da"/>
-      <path d="M50 68 C33 55 18 59 10 53 C24 76 39 75 50 68Z" fill="#f7dce7"/>
-      <path d="M50 68 C67 55 82 59 90 53 C76 76 61 75 50 68Z" fill="#f7dce7"/>
-    </g>
-    <path d="M24 75 Q50 81 76 75" fill="none" stroke="#bd7898" stroke-width="2" stroke-linecap="round"/>
-  </svg>
+      <div class="welcome-card">
+        <h3>A little hello from Eva</h3>
+        <p>
+          Hiii, and welcome to Eva Dandelion! 🌷 This is my little corner
+          where I can collect moments, feelings, ideas and words.
+        </p>
+        <p>
+          Some days will be sunshine, some days will be a little messy,
+          and some days will simply be ordinary. Every page has a place here.
+        </p>
+        <p>
+          Grab an imaginary cup of tea, find a cozy spot and explore.
+          I'm so happy you're here!
+        </p>
+      </div>
+    </section>
 
-  <p class="handwriting">Eva Dandelion ♡</p>
-  <p>A little world made of words, feelings and daydreams.</p>
-  <a href="https://www.youtube.com/@creativecorner100"
-     target="_blank" rel="noopener noreferrer">
-    YouTube · @creativecorner100
-  </a>
-</footer>
+    <section class="diary-section" id="diary">
+      <div class="section">
+        <div class="section-heading">
+          <h2>My Little Diary</h2>
+          <p>
+            Small moments, honest thoughts and memories saved one entry at a time.
+          </p>
+        </div>
 
-<script>
-/*
-  PUBLIC WRITING:
-  Add only writing you want everyone to read.
-  Separate entries with commas.
-  Do not put private drafts or personal secrets here.
-*/
+        <div class="filters" aria-label="Filter writing by category">
+          <button class="filter-button active" data-filter="All" aria-pressed="true">All Entries</button>
+          <button class="filter-button" data-filter="Diary" aria-pressed="false">Diary</button>
+          <button class="filter-button" data-filter="Poetry" aria-pressed="false">Poetry</button>
+          <button class="filter-button" data-filter="Stories" aria-pressed="false">Stories</button>
+          <button class="filter-button" data-filter="Novels" aria-pressed="false">Novels</button>
+        </div>
 
-const PUBLIC_ENTRIES = [
-  {
-    title: "My First Diary Entry",
-    category: "Diary",
-    date: "2026-09-28",
-    content: "Hello, welcome to my little world! 🌷 This is my first public diary entry."
-  }
+        <div class="entries" id="entries" aria-live="polite"></div>
+      </div>
+    </section>
 
-  /*
-  EXAMPLE OF ANOTHER ENTRY — remove the comment marks to use it:
+    <section class="section" id="writing">
+      <div class="section-heading">
+        <h2>My Writing Corner</h2>
+        <p>
+          Different shelves for all the different worlds living in my head.
+        </p>
+      </div>
 
-  ,{
-    title: "A Little Poem",
-    category: "Poetry",
-    date: "2026-09-28",
-    content: "Write your poem here."
-  }
-  */
-];
+      <div class="writing-grid">
+        <article class="writing-card">
+          <span class="writing-symbol" aria-hidden="true">🌷</span>
+          <h3>Diary</h3>
+          <p>Little everyday moments, feelings and discoveries.</p>
+        </article>
 
-(function () {
-  "use strict";
+        <article class="writing-card">
+          <span class="writing-symbol" aria-hidden="true">🌸</span>
+          <h3>Poetry</h3>
+          <p>Words that dance, feelings that rhyme and thoughts that bloom.</p>
+        </article>
 
-  const publicList = document.getElementById("public-list");
-  const publicFilter = document.getElementById("public-filter");
+        <article class="writing-card">
+          <span class="writing-symbol" aria-hidden="true">🦋</span>
+          <h3>Stories</h3>
+          <p>Little adventures, new characters and imaginary places.</p>
+        </article>
 
-  function makeElement(tag, className, text) {
-    const node = document.createElement(tag);
-    if (className) node.className = className;
-    if (text !== undefined) node.textContent = text;
-    return node;
-  }
+        <article class="writing-card">
+          <span class="writing-symbol" aria-hidden="true">📖</span>
+          <h3>Novels</h3>
+          <p>Longer journeys, chapter by chapter, page by page.</p>
+        </article>
+      </div>
+    </section>
 
-  function renderPublic() {
-    publicList.replaceChildren();
+    <section class="youtube-section" id="read">
+      <div class="section">
+        <div class="section-heading">
+          <h2>Read, Watch & Explore</h2>
+          <p>Come along for more creative little adventures.</p>
+        </div>
 
-    const chosen = publicFilter.value;
+        <div class="youtube-card">
+          <h3>Creative Corner</h3>
+          <p>
+            There's more creativity waiting for you over on my YouTube channel.
+            Come say hi and explore!
+          </p>
+          <a
+            class="button-link"
+            href="https://www.youtube.com/@creativecorner100"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit My YouTube Channel ↗
+          </a>
+        </div>
+      </div>
+    </section>
 
-    const entries = PUBLIC_ENTRIES.filter(entry =>
-      entry &&
-      typeof entry.title === "string" &&
-      typeof entry.content === "string" &&
-      (chosen === "All" || entry.category === chosen)
-    );
+    <section class="section" id="about">
+      <div class="section-heading">
+        <h2>A Little About This Place</h2>
+      </div>
 
-    if (!entries.length) {
-      publicList.appendChild(makeElement(
-        "p",
-        "empty",
-        "No published pages in this collection yet. Please visit again soon. ♡"
-      ));
-      return;
+      <div class="about-card">
+        <h3>Made by Eva, with love</h3>
+        <p>
+          Eva Dandelion is a personal creative space for sharing writing,
+          collecting memories and celebrating the small things.
+        </p>
+        <p>
+          This website is a work in progress, just like the person creating it.
+          New pages and entries can appear as the journey continues.
+        </p>
+        <p>
+          Thank you for being part of this little world, tulips. 🌷
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-name">Eva Dandelion</div>
+    <p>
+      <svg class="tiny-lotus" viewBox="0 0 100 100" fill="none"
+           xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M50 77 C27 65 16 46 26 25 C41 35 49 53 50 77Z"
+              stroke="currentColor" stroke-width="5" stroke-linejoin="round"/>
+        <path d="M50 77 C73 65 84 46 74 25 C59 35 51 53 50 77Z"
+              stroke="currentColor" stroke-width="5" stroke-linejoin="round"/>
+        <path d="M50 77 C34 59 36 34 50 15 C64 34 66 59 50 77Z"
+              stroke="currentColor" stroke-width="5" stroke-linejoin="round"/>
+        <path d="M21 62 C30 72 39 77 50 80 C61 77 70 72 79 62"
+              stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+      made with love, pink dreams and a little bit of chaos
+    </p>
+    <p>© <span id="year"></span> Eva Dandelion · All little things bloom in time.</p>
+  </footer>
+
+  <script>
+    /*
+      PUBLIC ENTRIES
+      Add new entries at the TOP of this list.
+      Anything added here will be visible to every website visitor.
+      Keep a comma between entry objects.
+    */
+
+    const PUBLIC_ENTRIES = [
+      {
+        title: "Eurekaaaa! My First Website",
+        category: "Diary",
+        date: "2026-09-28",
+        content: "Hiii,,,eva was damn frustrated today but somewhat happy beacuse she made her website for the first timeee..eurekaaaa!!!!!ummm..it was bit off but okay nice everything is good around ...hope to see u in next entry eva's tulipss"
+      },
+      {
+        title: "My First Diary Entry",
+        category: "Diary",
+        date: "2026-09-28",
+        content: "Hello, welcome to my little world! 🌷 This is my first public diary entry."
+      }
+    ];
+
+    const entriesContainer = document.getElementById("entries");
+    const filterButtons = document.querySelectorAll(".filter-button");
+
+    function formatDate(dateString) {
+      const date = new Date(dateString + "T12:00:00");
+
+      if (Number.isNaN(date.getTime())) {
+        return dateString;
+      }
+
+      return date.toLocaleDateString("en-GB", {
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      });
     }
 
-    entries.slice().reverse().forEach(entry => {
-      const card = makeElement("article", "entry-card");
+    function createEntryCard(entry) {
+      const article = document.createElement("article");
+      article.className = "entry-card";
 
-      card.appendChild(makeElement(
-        "h3",
-        "",
-        entry.title || "Untitled"
-      ));
+      const category = document.createElement("span");
+      category.className = "entry-category";
+      category.textContent = entry.category;
 
-      card.appendChild(makeElement(
-        "p",
-        "entry-meta",
-        (entry.category || "Writing") + " · " + (entry.date || "")
-      ));
+      const title = document.createElement("h3");
+      title.textContent = entry.title;
 
-      card.appendChild(makeElement(
-        "p",
-        "entry-content",
-        entry.content || ""
-      ));
+      const date = document.createElement("p");
+      date.className = "entry-date";
+      date.textContent = formatDate(entry.date);
 
-      publicList.appendChild(card);
+      const content = document.createElement("p");
+      content.className = "entry-content";
+      content.textContent = entry.content;
+
+      article.append(category, title, date, content);
+
+      return article;
+    }
+
+    function renderEntries(filter = "All") {
+      entriesContainer.replaceChildren();
+
+      const filteredEntries = PUBLIC_ENTRIES.filter(entry => {
+        return filter === "All" || entry.category === filter;
+      });
+
+      if (filteredEntries.length === 0) {
+        const message = document.createElement("p");
+        message.className = "empty-message";
+        message.textContent =
+          "Nothing on this shelf just yet. Maybe a new little page will bloom soon! 🌷";
+        entriesContainer.appendChild(message);
+        return;
+      }
+
+      filteredEntries.forEach(entry => {
+        entriesContainer.appendChild(createEntryCard(entry));
+      });
+    }
+
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const selectedFilter = button.dataset.filter;
+
+        filterButtons.forEach(item => {
+          const isActive = item === button;
+          item.classList.toggle("active", isActive);
+          item.setAttribute("aria-pressed", String(isActive));
+        });
+
+        renderEntries(selectedFilter);
+      });
     });
-  }
 
-  window.setFilter = function (category) {
-    publicFilter.value = category;
-    renderPublic();
-  };
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-  publicFilter.addEventListener("change", renderPublic);
-
-  renderPublic();
-})();
-</script>
+    renderEntries();
+  </script>
 
 </body>
 </html>
