@@ -4,39 +4,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eva Dandelion — My Little Diary</title>
+<meta name="theme-color" content="#fff7fa">
+<title>Eva Dandelion ♡</title>
+<meta name="description" content="A little world of feelings, poetry, stories, novels, and daydreams.">
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --bg: #fff8f7;
-  --paper: #fffdfb;
-  --pink: #f4dce3;
-  --rose: #b66f88;
-  --dark: #684b57;
-  --muted: #a88c97;
-  --line: #f0e1e5;
+  --bg: #fff7fa;
+  --paper: #fffdfd;
+  --pink: #f8e4ec;
+  --pink-dark: #b66a89;
+  --rose: #9c5272;
+  --text: #735e6a;
+  --muted: #aa8e9c;
+  --border: #f0dce5;
+  --shadow: 0 8px 30px rgba(176, 106, 137, 0.07);
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 20px;
 }
 
 body {
   margin: 0;
   background: var(--bg);
-  color: var(--dark);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-  line-height: 1.8;
+  color: var(--text);
+  font-family: 'Quicksand', sans-serif;
+  font-size: 15px;
+  line-height: 1.9;
 }
 
-button, textarea, select {
+button, input, textarea, select {
   font: inherit;
 }
 
@@ -44,29 +49,20 @@ button, a {
   -webkit-tap-highlight-color: transparent;
 }
 
-.top-note {
+a { color: var(--rose); }
+
+.hero {
+  padding: 58px 20px 35px;
   text-align: center;
-  padding: 8px 12px;
-  background: #f8e7ec;
-  color: #98697b;
-  font-size: 10px;
-  letter-spacing: 2px;
+  background:
+    radial-gradient(circle at 12% 20%, #f7e2eb 0 2px, transparent 3px),
+    radial-gradient(circle at 86% 65%, #f7e2eb 0 2px, transparent 3px),
+    linear-gradient(180deg, #fff0f5, var(--bg));
 }
 
-.wrapper {
-  width: calc(100% - 32px);
-  max-width: 760px;
-  margin: 38px auto;
-}
-
-header {
-  text-align: center;
-  padding: 25px 15px 35px;
-}
-
-.flower {
-  font-size: 25px;
-  margin-bottom: 8px;
+.lotus {
+  font-size: 39px;
+  line-height: 1.4;
 }
 
 .eyebrow {
@@ -76,627 +72,711 @@ header {
   color: var(--muted);
 }
 
-h1, h2, h3 {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-weight: 400;
+h1, h2, h3, .serif {
+  font-family: 'Caveat', cursive;
+  font-weight: 500;
 }
 
 h1 {
   color: var(--rose);
-  font-size: clamp(40px, 8vw, 61px);
-  line-height: 1.2;
-  margin: 12px 0;
+  font-size: clamp(55px, 10vw, 86px);
+  line-height: 1.1;
+  margin: 14px 0 5px;
 }
 
-.subtitle {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-style: italic;
-  color: var(--muted);
-  font-size: 16px;
+.tagline {
+  font-family: 'Caveat', cursive;
+  font-size: 27px;
+  color: var(--pink-dark);
+  margin: 8px 0 25px;
 }
 
 nav {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 24px;
-  padding: 15px 0;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  justify-content: center;
+  gap: 7px;
+  max-width: 950px;
+  margin: 20px auto 0;
+  padding: 18px 5px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 nav a {
   text-decoration: none;
-  color: var(--dark);
+  color: var(--text);
+  padding: 7px 13px;
   font-size: 11px;
   letter-spacing: 1px;
+  border-radius: 25px;
+  transition: .2s;
 }
 
 nav a:hover {
+  background: white;
   color: var(--rose);
 }
 
-.intro {
-  padding: 38px 8px 30px;
-  text-align: center;
+main {
+  width: min(900px, 94%);
+  margin: auto;
+  padding: 25px 0 65px;
 }
 
-.intro h2 {
-  font-size: 29px;
+section {
+  scroll-margin-top: 18px;
+}
+
+.intro {
+  max-width: 630px;
+  text-align: center;
+  margin: 0 auto 28px;
+  padding: 24px 12px;
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 1.2;
+  color: var(--rose);
+  margin: 8px 0 12px;
+}
+
+h3 {
+  font-size: 30px;
   color: var(--rose);
   margin: 8px 0;
 }
 
-.intro p {
-  color: #947d87;
-  max-width: 440px;
-  margin: 0 auto;
-}
+p { overflow-wrap: anywhere; }
 
 .paper {
   background: var(--paper);
-  border: 1px solid #f0e2e5;
-  border-radius: 5px;
-  padding: clamp(20px, 5vw, 36px);
-  box-shadow: 0 8px 30px #a96d8310;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: clamp(21px, 5vw, 40px);
+  margin: 25px 0;
+  box-shadow: var(--shadow);
 }
 
-.section-title {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 25px;
-  color: var(--rose);
-  margin: 0 0 4px;
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 25px;
 }
 
-.hint {
-  font-size: 12px;
-  color: var(--muted);
-  margin: 0 0 20px;
+.category-card {
+  display: block;
+  text-decoration: none;
+  color: var(--text);
+  background: #fffafb;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  padding: 24px;
+  transition: .2s;
+}
+
+.category-card:hover {
+  background: #fdf0f5;
+  transform: translateY(-2px);
+}
+
+.category-icon {
+  font-size: 27px;
+}
+
+.category-card h3 {
+  font-size: 32px;
+  margin: 6px 0;
+}
+
+.category-card p {
+  margin: 0;
+  font-size: 13px;
 }
 
 label {
   display: block;
-  font-size: 11px;
-  letter-spacing: 1px;
-  color: var(--muted);
-  margin: 16px 0 5px;
+  margin: 18px 0 6px;
+  color: #947185;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .5px;
 }
 
-input, select, textarea {
+input, textarea, select {
   width: 100%;
-  color: var(--dark);
-  background: #fffaf9;
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  padding: 12px;
+  display: block;
+  padding: 13px 15px;
+  color: var(--text);
+  background: #fffafb;
+  border: 1px solid #edd5df;
+  border-radius: 9px;
   outline: none;
 }
 
-input:focus, select:focus, textarea:focus {
-  border-color: #d8a1b3;
-  box-shadow: 0 0 0 2px #f9edf1;
+input:focus, textarea:focus, select:focus {
+  border-color: #c88aa5;
+  box-shadow: 0 0 0 3px #f8e4ec;
 }
 
 textarea {
-  min-height: 190px;
+  min-height: 270px;
   resize: vertical;
   line-height: 1.9;
-  font-family: 'Caveat', cursive;
-  font-size: 21px;
-  background-image: repeating-linear-gradient(
-    transparent,
-    transparent 34px,
-    #f2e6e9 35px
-  );
+  font-family: 'Quicksand', sans-serif;
+  font-size: 15px;
 }
 
-textarea::placeholder {
-  color: #c5aeb7;
-}
-
-.primary {
-  border: none;
-  background: var(--rose);
-  color: white;
-  border-radius: 30px;
-  padding: 11px 23px;
-  cursor: pointer;
-  transition: background .2s;
-}
-
-.primary:hover {
-  background: #995a72;
-}
-
-.secondary {
-  background: transparent;
-  color: var(--rose);
-  border: 1px solid var(--pink);
-  border-radius: 30px;
-  padding: 8px 15px;
-  cursor: pointer;
-}
-
-.form-actions {
+.button-row {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 19px;
+  border: 1px solid #e8c6d4;
+  border-radius: 30px;
+  background: #f9e8ef;
+  color: var(--rose);
+  text-decoration: none;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.btn:hover { background: #f4dce7; }
+
+.btn.primary {
+  background: var(--pink-dark);
+  border-color: var(--pink-dark);
+  color: white;
+}
+
+.btn.primary:hover { background: var(--rose); }
+
+.btn.danger {
+  background: transparent;
+  color: #a2546c;
+}
+
+.message {
+  min-height: 24px;
+  font-size: 13px;
+  color: var(--rose);
+}
+
+.entry-card {
+  padding: 22px;
+  background: #fffafb;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  margin: 16px 0;
+  overflow-wrap: anywhere;
+}
+
+.entry-card h3 {
+  font-size: 30px;
+  margin: 4px 0;
+}
+
+.entry-meta {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: .4px;
+}
+
+.entry-content {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.9;
+}
+
+.entry-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
   margin-top: 15px;
 }
 
-.status {
-  font-size: 11px;
-  color: var(--muted);
+.entry-actions .btn {
+  font-size: 12px;
+  padding: 7px 13px;
 }
 
-.divider {
-  border: none;
-  border-top: 1px solid var(--line);
-  margin: 35px 0;
-}
-
-.prompts {
-  background: #fff1f4;
-  padding: 24px;
-  border-radius: 5px;
-  margin-top: 25px;
-}
-
-.prompts h3 {
-  font-size: 21px;
-  margin: 0 0 10px;
-  color: var(--rose);
-}
-
-.prompt {
-  padding: 9px 0;
-  border-bottom: 1px dashed #e9d3dc;
-  cursor: pointer;
-  color: #8c6d7b;
-  font-size: 13px;
-}
-
-.prompt:last-child {
-  border-bottom: none;
-}
-
-.prompt:hover {
-  color: var(--rose);
-}
-
-.entries-heading {
-  margin: 45px 0 18px;
-}
-
-.entries-heading h2 {
-  font-size: 29px;
-  color: var(--rose);
-  margin: 5px 0;
-}
-
-.entry {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  padding: 24px;
-  margin: 15px 0;
-  border-radius: 5px;
-  overflow-wrap: anywhere;
-}
-
-.entry-date {
-  font-size: 10px;
-  letter-spacing: 1px;
-  color: var(--muted);
-  text-transform: uppercase;
-}
-
-.entry h3 {
-  font-size: 23px;
-  margin: 8px 0;
-  color: var(--rose);
-}
-
-.entry-body {
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
+.empty {
+  padding: 25px 10px;
+  text-align: center;
   font-family: 'Caveat', cursive;
-  font-size: 20px;
-  line-height: 1.7;
+  font-size: 25px;
+  color: var(--muted);
 }
 
-.entry-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 16px;
-}
-
-.mood {
+.small-note {
   color: var(--muted);
   font-size: 12px;
 }
 
-.delete {
-  color: #a17e8c;
-  background: none;
-  border: none;
-  text-decoration: underline;
-  cursor: pointer;
-  font-size: 11px;
-}
-
-.empty {
-  text-align: center;
-  padding: 25px 10px;
-  color: var(--muted);
-  font-family: 'Playfair Display', Georgia, serif;
-  font-style: italic;
-}
-
-.about {
-  text-align: center;
-  padding: 35px 10px;
-}
-
-.about h2 {
-  font-size: 27px;
-  color: var(--rose);
-}
-
-.about p {
-  max-width: 430px;
-  margin: 10px auto;
-  color: #947d87;
-}
-
 footer {
   text-align: center;
-  border-top: 1px solid var(--line);
-  padding: 24px 10px;
+  padding: 35px 20px 45px;
+  border-top: 1px solid var(--border);
   color: var(--muted);
-  font-size: 11px;
+  font-size: 12px;
 }
 
-footer a {
-  color: var(--rose);
-  text-decoration: none;
+footer .signature {
+  font-family: 'Caveat', cursive;
+  font-size: 29px;
+  color: var(--pink-dark);
 }
 
-.privacy-note {
-  font-size: 11px;
-  color: var(--muted);
-  line-height: 1.7;
-  margin-top: 18px;
-}
+.hidden { display: none !important; }
 
-@media (max-width: 500px) {
-  .wrapper {
-    width: calc(100% - 22px);
-    margin: 18px auto;
-  }
-
-  header {
-    padding: 20px 5px 25px;
-  }
-
-  nav {
-    gap: 13px;
-  }
-
-  nav a {
-    font-size: 10px;
-  }
-
-  .paper {
-    padding: 19px;
-  }
-
-  .prompts {
-    padding: 19px;
-  }
-
-  .entry {
-    padding: 18px;
-  }
+@media (max-width: 600px) {
+  .hero { padding-top: 38px; }
+  .category-grid { grid-template-columns: 1fr; }
+  nav { gap: 3px; padding: 13px 4px; }
+  nav a { font-size: 10px; padding: 7px 9px; }
+  main { width: 94%; padding-top: 15px; }
+  h2 { font-size: 35px; }
 }
 </style>
 </head>
 
 <body>
 
-<div class="top-note">
-  a little space for my heart ♡
-</div>
-
-<div class="wrapper">
-
-<header>
-  <div class="flower">🌷</div>
-  <div class="eyebrow">a personal journal</div>
+<header class="hero" id="home">
+  <div class="lotus">🪷</div>
+  <p class="eyebrow">a little personal journal</p>
   <h1>Eva Dandelion</h1>
-  <div class="subtitle">all the things I never quite say out loud</div>
+  <p class="tagline">all the things I never quite say out loud ♡</p>
 </header>
 
-<nav>
+<nav aria-label="Main navigation">
   <a href="#home">HOME</a>
-  <a href="#write">MY JOURNAL</a>
-  <a href="#memories">MY ENTRIES</a>
-  <a href="#about">ABOUT THIS SPACE</a>
+  <a href="#diary">MY DIARY</a>
+  <a href="#collections">MY WRITING</a>
+  <a href="#writing-desk">WRITE</a>
+  <a href="#saved-pages">SAVED PAGES</a>
+  <a href="#about">ABOUT</a>
 </nav>
 
 <main>
 
-<section class="intro" id="home">
-  <div class="eyebrow">dear diary,</div>
+<section class="intro">
+  <p class="eyebrow">dear diary,</p>
   <h2>Welcome to my little world.</h2>
   <p>
-    Some days are beautiful. Some are confusing.
-    Some are just days I don't know how to explain.
-    This is where I leave a little piece of my heart.
+    Some days are beautiful. Some are confusing. Some are just days
+    I don't know how to explain. This is where I leave a little piece
+    of my heart.
   </p>
+  <p class="serif">No perfect words required. Just be yourself. ♡</p>
 </section>
 
-<section id="write" class="paper">
-  <h2 class="section-title">A page of my own ♡</h2>
-  <p class="hint">Take a breath. There is no right way to feel.</p>
+<section id="diary" class="paper">
+  <p class="eyebrow">01 · my personal pages</p>
+  <h2>A page of my own ♡</h2>
+  <p>
+    For the feelings I cannot explain, the memories I want to keep,
+    the days I want to forget, and the thoughts that arrive at midnight.
+  </p>
+  <p>Dear diary, this is my little space to be honest with myself.</p>
+  <a href="#writing-desk" class="btn"
+     onclick="chooseCategory('Diary')">Open my diary ♡</a>
+</section>
 
-  <form id="diaryForm">
-    <label for="entryDate">TODAY'S DATE</label>
-    <input id="entryDate" type="date" required>
+<section id="collections" class="paper">
+  <p class="eyebrow">02 · different pieces of me</p>
+  <h2>My little collection ✿</h2>
+  <p>Every kind of writing deserves a little home of its own.</p>
 
-    <label for="entryTitle">GIVE THIS MOMENT A NAME</label>
-    <input id="entryTitle" type="text"
-      maxlength="100"
-      placeholder="A day I won't forget..." required>
+  <div class="category-grid">
+    <a class="category-card" href="#writing-desk"
+       onclick="chooseCategory('Diary')">
+      <div class="category-icon">💌</div>
+      <h3>My Diary</h3>
+      <p>Feelings, memories, and little everyday moments.</p>
+    </a>
 
-    <label for="entryMood">HOW AM I FEELING?</label>
-    <select id="entryMood">
-      <option>🌷 A little hopeful</option>
-      <option>☀️ Happy</option>
-      <option>☁️ Confused</option>
-      <option>🌧️ Sad</option>
-      <option>🌙 Quiet and thoughtful</option>
-      <option>🦋 Excited</option>
-      <option>💭 A little overwhelmed</option>
-      <option>🤍 I don't know yet</option>
-      <option>🌸 Peaceful</option>
+    <a class="category-card" href="#writing-desk"
+       onclick="chooseCategory('Poetry')">
+      <div class="category-icon">🌷</div>
+      <h3>My Poetry</h3>
+      <p>Little pieces of my heart turned into words.</p>
+    </a>
+
+    <a class="category-card" href="#writing-desk"
+       onclick="chooseCategory('Stories')">
+      <div class="category-icon">📖</div>
+      <h3>My Stories</h3>
+      <p>Imaginary worlds, characters, and tales to remember.</p>
+    </a>
+
+    <a class="category-card" href="#writing-desk"
+       onclick="chooseCategory('Novels')">
+      <div class="category-icon">🕯️</div>
+      <h3>My Novels</h3>
+      <p>Longer dreams, chapters, and stories still growing.</p>
+    </a>
+  </div>
+</section>
+
+<section id="writing-desk" class="paper">
+  <p class="eyebrow">03 · your quiet little corner</p>
+  <h2 id="desk-heading">Let's write something ♡</h2>
+  <p>Take your time. A sentence or a whole chapter — it's up to you.</p>
+
+  <form id="entry-form">
+    <label for="entry-category">Choose your category</label>
+    <select id="entry-category" required>
+      <option value="Diary">My Diary</option>
+      <option value="Poetry">My Poetry</option>
+      <option value="Stories">My Stories</option>
+      <option value="Novels">My Novels</option>
     </select>
 
-    <label for="entryText">WHAT'S ON MY HEART?</label>
-    <textarea id="entryText"
-      placeholder="Dear diary, today I feel..."
+    <label for="entry-title">Give this page a name</label>
+    <input id="entry-title" type="text"
+      placeholder="e.g. the night I couldn't sleep..." maxlength="200" required>
+
+    <label for="entry-date">Date</label>
+    <input id="entry-date" type="date" required>
+
+    <label for="entry-content">What's on your heart? ♡</label>
+    <textarea id="entry-content"
+      placeholder="Dear diary...&#10;&#10;Once upon a time...&#10;&#10;My words begin here."
       required></textarea>
 
-    <div class="form-actions">
-      <button type="submit" class="primary">Keep this page ♡</button>
-      <button type="reset" class="secondary">Start over</button>
+    <div class="button-row">
+      <button class="btn primary" type="submit" id="save-button">
+        Keep this page ♡
+      </button>
+      <button class="btn" type="button" id="clear-button">
+        Clear page
+      </button>
+      <button class="btn hidden" type="button" id="cancel-button">
+        Cancel editing
+      </button>
     </div>
-    <div id="status" class="status" aria-live="polite"></div>
+    <p class="message" id="form-message" aria-live="polite"></p>
   </form>
+</section>
 
-  <p class="privacy-note">
-    Your entries are saved in this browser on this device.
-    They are not uploaded to this website or synced between devices.
-    Anyone using this same browser profile may be able to see them.
-    This is not a password-protected diary.
+<section id="saved-pages" class="paper">
+  <p class="eyebrow">04 · little pieces of my heart</p>
+  <h2>My saved pages ♡</h2>
+  <p>Everything you've written, gathered in one place.</p>
+
+  <label for="filter-category">Find your pages</label>
+  <select id="filter-category">
+    <option value="All">All my writing</option>
+    <option value="Diary">My Diary</option>
+    <option value="Poetry">My Poetry</option>
+    <option value="Stories">My Stories</option>
+    <option value="Novels">My Novels</option>
+  </select>
+
+  <div id="entries-list"></div>
+
+  <div class="button-row">
+    <button class="btn" id="export-button" type="button">
+      Back up my writings ♡
+    </button>
+  </div>
+  <p class="small-note">
+    Download a backup occasionally so you have another copy of your work.
   </p>
 </section>
 
-<section class="prompts">
-  <h3>When words feel far away...</h3>
-  <p class="hint">Choose a little thought to help you begin.</p>
-
-  <div class="prompt" data-prompt="Something I wish I could tell someone is...">
-    ♡ Something I wish I could tell someone is...
-  </div>
-  <div class="prompt" data-prompt="Today, one thing that stayed on my mind was...">
-    ♡ Today, one thing that stayed on my mind was...
-  </div>
-  <div class="prompt" data-prompt="If my heart could speak without fear, it would say...">
-    ♡ If my heart could speak without fear, it would say...
-  </div>
-  <div class="prompt" data-prompt="A little thing I want to remember is...">
-    ♡ A little thing I want to remember is...
-  </div>
-  <div class="prompt" data-prompt="Right now, what I really need is...">
-    ♡ Right now, what I really need is...
-  </div>
-</section>
-
-<section id="memories">
-  <div class="entries-heading">
-    <div class="eyebrow">little pieces of me</div>
-    <h2>Pages I've written</h2>
-    <p class="hint">Every feeling deserves a little room.</p>
-  </div>
-
-  <div id="entriesList">
-    <div class="empty">
-      Your pages will find a home here. ♡
-    </div>
-  </div>
-</section>
-
-<section id="about" class="about">
-  <div class="flower">🌼</div>
-  <h2>A little note from Eva</h2>
+<section id="about" class="paper">
+  <p class="eyebrow">05 · a little note</p>
+  <h2>About Eva Dandelion ♡</h2>
   <p>
-    Eva Dandelion is a pen name, a quiet corner,
-    and a little world of my own.
+    A pen name, a creative heart, and a tiny world filled with
+    thoughts, feelings, poems, stories, and daydreams.
   </p>
-  <p>
-    Here, I don't have to have everything figured out.
-    I can just be, feel, write, and grow.
+  <p class="serif">
+    Somewhere between flowers and forgotten thoughts,
+    these pages belong to Eva Dandelion.
   </p>
-  <div class="subtitle">gently, one day at a time ♡</div>
+  <p class="small-note">
+    The website is public, but entries created here are saved in this
+    browser on this device. They are not encrypted or password-protected.
+    Anyone with access to this browser profile may be able to read them.
+    Avoid writing highly sensitive secrets here.
+  </p>
 </section>
 
 </main>
 
 <footer>
-  <p>made of feelings, little thoughts & quiet dreams</p>
-  <p>with love, Eva Dandelion ♡</p>
+  <div class="lotus">🪷</div>
+  <div class="signature">with love, Eva ♡</div>
+  <p>a little world made of words, feelings & daydreams</p>
+  <p>grow gently, at your own pace.</p>
   <p>
     <a href="https://www.youtube.com/@creativecorner100"
        target="_blank" rel="noopener noreferrer">
-      my little creative corner ↗
+       Visit my creative corner on YouTube ↗
     </a>
   </p>
 </footer>
 
-</div>
-
 <script>
-const form = document.getElementById('diaryForm');
-const dateField = document.getElementById('entryDate');
-const titleField = document.getElementById('entryTitle');
-const moodField = document.getElementById('entryMood');
-const textField = document.getElementById('entryText');
-const list = document.getElementById('entriesList');
-const status = document.getElementById('status');
+(function () {
+  "use strict";
 
-const STORAGE_KEY = 'evaDandelionJournal_v1';
+  const STORAGE_KEY = "evaDandelionSoftWritingV3";
 
-function localDate() {
-  const now = new Date();
-  const offset = now.getTimezoneOffset();
-  return new Date(now.getTime() - offset * 60000)
-    .toISOString().slice(0, 10);
-}
+  const form = document.getElementById("entry-form");
+  const categoryInput = document.getElementById("entry-category");
+  const titleInput = document.getElementById("entry-title");
+  const dateInput = document.getElementById("entry-date");
+  const contentInput = document.getElementById("entry-content");
+  const message = document.getElementById("form-message");
+  const list = document.getElementById("entries-list");
+  const filter = document.getElementById("filter-category");
+  const saveButton = document.getElementById("save-button");
+  const cancelButton = document.getElementById("cancel-button");
 
-dateField.value = localDate();
+  let editingId = null;
 
-function getEntries() {
-  try {
-    const data = localStorage.getItem(STORAGE_KEY);
-    const entries = data ? JSON.parse(data) : [];
-    return Array.isArray(entries) ? entries : [];
-  } catch (error) {
-    return [];
-  }
-}
-
-function saveEntries(entries) {
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
-    return true;
-  } catch (error) {
-    status.textContent =
-      'Could not save. Check browser storage or available space.';
-    return false;
-  }
-}
-
-function makeElement(tag, className, text) {
-  const element = document.createElement(tag);
-  if (className) element.className = className;
-  if (text !== undefined) element.textContent = text;
-  return element;
-}
-
-function renderEntries() {
-  const entries = getEntries().sort((a, b) =>
-    b.createdAt - a.createdAt
-  );
-
-  list.replaceChildren();
-
-  if (!entries.length) {
-    list.appendChild(makeElement(
-      'div',
-      'empty',
-      'Your pages will find a home here. ♡'
-    ));
-    return;
+  function todayString() {
+    const now = new Date();
+    const local = new Date(
+      now.getTime() - now.getTimezoneOffset() * 60000
+    );
+    return local.toISOString().slice(0, 10);
   }
 
-  entries.forEach(entry => {
-    const card = makeElement('article', 'entry');
-    const date = makeElement('div', 'entry-date', entry.date);
-    const title = makeElement('h3', '', entry.title);
-    const body = makeElement('div', 'entry-body', entry.text);
-    const bottom = makeElement('div', 'entry-bottom');
-    const mood = makeElement('div', 'mood', entry.mood);
-    const remove = makeElement('button', 'delete', 'Remove entry');
+  dateInput.value = todayString();
 
-    remove.type = 'button';
-    remove.addEventListener('click', () => {
-      if (!confirm('Remove this diary entry from this browser?')) {
-        return;
-      }
+  function loadEntries() {
+    try {
+      const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+      return Array.isArray(parsed) ? parsed.filter(entry =>
+        entry && typeof entry.id === "string" &&
+        typeof entry.title === "string" &&
+        typeof entry.content === "string"
+      ) : [];
+    } catch (error) {
+      return [];
+    }
+  }
 
-      const remaining = getEntries().filter(item =>
-        item.id !== entry.id
-      );
+  function storeEntries(entries) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
+      return true;
+    } catch (error) {
+      message.textContent =
+        "Couldn't save this page. Please copy your writing somewhere safe.";
+      return false;
+    }
+  }
 
-      if (saveEntries(remaining)) {
-        status.textContent = 'Entry removed.';
-        renderEntries();
-      }
-    });
+  window.chooseCategory = function (category) {
+    categoryInput.value = category;
 
-    card.append(date, title, body);
-    bottom.append(mood, remove);
-    card.appendChild(bottom);
-    list.appendChild(card);
-  });
-}
+    const headings = {
+      Diary: "A page of my own ♡",
+      Poetry: "Little pieces of my heart ♡",
+      Stories: "Once upon a feeling ♡",
+      Novels: "One chapter at a time ♡"
+    };
 
-form.addEventListener('submit', event => {
-  event.preventDefault();
-
-  const entry = {
-    id: String(Date.now()) + Math.random().toString(16).slice(2),
-    createdAt: Date.now(),
-    date: dateField.value,
-    title: titleField.value.trim(),
-    mood: moodField.value,
-    text: textField.value.trim()
+    document.getElementById("desk-heading").textContent =
+      headings[category] || "Let's write something ♡";
+    message.textContent = "";
   };
 
-  if (!entry.title || !entry.text) {
-    status.textContent = 'Add a title and your thoughts first. ♡';
-    return;
-  }
-
-  const entries = getEntries();
-  entries.push(entry);
-
-  if (saveEntries(entries)) {
+  function resetForm() {
+    editingId = null;
     form.reset();
-    dateField.value = localDate();
-    status.textContent = 'Your little page has been saved in this browser. ♡';
+    dateInput.value = todayString();
+    saveButton.textContent = "Keep this page ♡";
+    cancelButton.classList.add("hidden");
+    document.getElementById("desk-heading").textContent =
+      "Let's write something ♡";
+    message.textContent = "";
+  }
+
+  document.getElementById("clear-button").addEventListener("click", function () {
+    if ((titleInput.value.trim() || contentInput.value.trim()) &&
+        !confirm("Clear this writing box? Unsaved text will be lost.")) {
+      return;
+    }
+    resetForm();
+  });
+
+  cancelButton.addEventListener("click", resetForm);
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const title = titleInput.value.trim();
+    const content = contentInput.value;
+    const category = categoryInput.value;
+    const date = dateInput.value;
+
+    if (!title || !content.trim() || !date) {
+      message.textContent = "Add a title, date, and some words first. ♡";
+      return;
+    }
+
+    const entries = loadEntries();
+    const now = new Date().toISOString();
+
+    if (editingId !== null) {
+      const index = entries.findIndex(entry => entry.id === editingId);
+
+      if (index !== -1) {
+        entries[index] = {
+          ...entries[index],
+          title,
+          content,
+          category,
+          date,
+          updatedAt: now
+        };
+      }
+    } else {
+      entries.unshift({
+        id: Date.now().toString() + Math.random().toString(36).slice(2),
+        title,
+        content,
+        category,
+        date,
+        createdAt: now,
+        updatedAt: now
+      });
+    }
+
+    if (!storeEntries(entries)) return;
+
+    resetForm();
+    filter.value = "All";
     renderEntries();
-    document.getElementById('memories').scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
+    message.textContent = "";
+    document.getElementById("saved-pages").scrollIntoView({
+      behavior: "smooth"
+    });
+  });
+
+  function makeElement(tag, className, text) {
+    const element = document.createElement(tag);
+    if (className) element.className = className;
+    if (text !== undefined) element.textContent = text;
+    return element;
+  }
+
+  function renderEntries() {
+    list.replaceChildren();
+
+    const selected = filter.value;
+    const entries = loadEntries().filter(entry =>
+      selected === "All" || entry.category === selected
+    );
+
+    if (!entries.length) {
+      list.appendChild(makeElement(
+        "p",
+        "empty",
+        "Your little pages will appear here when you save them. ♡"
+      ));
+      return;
+    }
+
+    entries.sort((a, b) =>
+      (b.updatedAt || b.createdAt || "").localeCompare(
+        a.updatedAt || a.createdAt || ""
+      )
+    );
+
+    entries.forEach(entry => {
+      const card = makeElement("article", "entry-card");
+      const heading = makeElement("h3", "", entry.title);
+      const meta = makeElement(
+        "p",
+        "entry-meta",
+        entry.category + " · " + entry.date
+      );
+      const body = makeElement("p", "entry-content", entry.content);
+      const actions = makeElement("div", "entry-actions");
+
+      const edit = makeElement("button", "btn", "Edit page");
+      edit.type = "button";
+      edit.addEventListener("click", function () {
+        editingId = entry.id;
+        categoryInput.value = entry.category;
+        titleInput.value = entry.title;
+        dateInput.value = entry.date;
+        contentInput.value = entry.content;
+        saveButton.textContent = "Save changes ♡";
+        cancelButton.classList.remove("hidden");
+        document.getElementById("desk-heading").textContent =
+          "Revisiting my words ♡";
+        message.textContent = "You're editing a saved page.";
+        document.getElementById("writing-desk").scrollIntoView({
+          behavior: "smooth"
+        });
+      });
+
+      const remove = makeElement("button", "btn danger", "Delete page");
+      remove.type = "button";
+      remove.addEventListener("click", function () {
+        if (!confirm("Delete this page? This cannot be undone.")) return;
+
+        const remaining = loadEntries().filter(item => item.id !== entry.id);
+        if (storeEntries(remaining)) renderEntries();
+      });
+
+      actions.append(edit, remove);
+      card.append(heading, meta, body, actions);
+      list.appendChild(card);
     });
   }
-});
 
-form.addEventListener('reset', () => {
-  status.textContent = '';
-});
+  filter.addEventListener("change", renderEntries);
 
-document.querySelectorAll('.prompt').forEach(prompt => {
-  prompt.addEventListener('click', () => {
-    const starter = prompt.dataset.prompt;
-    textField.value = textField.value
-      ? textField.value + '\n\n' + starter
-      : starter;
-    document.getElementById('write').scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    });
-    textField.focus();
+  document.getElementById("export-button").addEventListener("click", function () {
+    const entries = loadEntries();
+
+    if (!entries.length) {
+      alert("You haven't saved any pages yet. ♡");
+      return;
+    }
+
+    const backup = entries.map(entry =>
+      "TITLE: " + entry.title + "\n" +
+      "CATEGORY: " + entry.category + "\n" +
+      "DATE: " + entry.date + "\n\n" +
+      entry.content + "\n\n" +
+      "----------------------------------------\n"
+    ).join("\n");
+
+    const blob = new Blob(
+      ["EVA DANDELION — MY WRITINGS\n\n" + backup],
+      { type: "text/plain;charset=utf-8" }
+    );
+
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "Eva-Dandelion-Writing-Backup.txt";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
   });
-});
 
-renderEntries();
+  renderEntries();
+})();
 </script>
 
 </body>
