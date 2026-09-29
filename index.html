@@ -1628,8 +1628,9 @@
       <nav aria-label="Main navigation">
         <a href="#home" data-page-link="home">DASHBOARD</a>
         <a href="#diary" data-page-link="diary">MY DIARY</a>
+        <a href="#poetry" data-page-link="poetry">POETRY</a>
         <a href="#stories" data-page-link="stories">STORIES</a>
-        <a href="#writing" data-page-link="writing">MY WRITING</a>
+        <a href="#novels" data-page-link="novels">NOVELS</a>
         <a href="#read" data-page-link="read">YOUTUBE</a>
         <a href="#little-letter" data-page-link="little-letter">SURPRISE GIFT</a>
         <a href="#about" data-page-link="about">ABOUT</a>
@@ -1713,7 +1714,7 @@
         <a class="dashboard-tile tile-stories" href="#stories">
           <span aria-hidden="true">🦋</span><strong>Story garden</strong><small>characters & what-ifs</small>
         </a>
-        <a class="dashboard-tile tile-writing" href="#writing">
+        <a class="dashboard-tile tile-writing" href="#poetry">
           <span aria-hidden="true">🖋️</span><strong>Poems & novels</strong><small>words still growing</small>
         </a>
         <a class="dashboard-tile tile-video" href="#read">
@@ -1786,48 +1787,6 @@
         </article>
       </div>
       <div class="story-footer-note">✂ cut out a little idea · tape it here · let it grow ✂</div>
-    </section>
-
-    <section class="section page-view" data-page="writing" id="writing">
-      <div class="section-heading">
-        <h2>My Writing Corner</h2>
-        <p>
-          Different shelves for all the different worlds living in my head.
-        </p>
-      </div>
-
-      <div class="writing-grid">
-        <article class="writing-card">
-          <span class="writing-symbol" aria-hidden="true">🌷</span>
-          <h3>Diary</h3>
-          <p>Little everyday moments, feelings and discoveries.</p>
-        </article>
-
-        <article class="writing-card">
-          <span class="writing-symbol" aria-hidden="true">🌸</span>
-          <h3>Poetry</h3>
-          <p>Words that dance, feelings that rhyme and thoughts that bloom.</p>
-        </article>
-
-        <article class="writing-card">
-          <span class="writing-symbol" aria-hidden="true">🦋</span>
-          <h3>Stories</h3>
-          <p>Little adventures, new characters and imaginary places.</p>
-        </article>
-
-        <article class="writing-card">
-  <span class="writing-symbol" aria-hidden="true">📖</span>
-  <h3>Novels</h3>
-  <p>Longer journeys, chapter by chapter, page by page.</p>
-
-  <a href="faulty-eva.pdf"
-     target="_blank"
-     rel="noopener noreferrer"
-     class="button-link">
-    Read <i>Faulty Eva!</i> ♡
-  </a>
-</article>
-      </div>
     </section>
 
     <section class="youtube-section page-view" data-page="read" id="read">
@@ -1929,6 +1888,13 @@
     */
 
     const PUBLIC_ENTRIES = [
+      {
+        title: "Faulty Eva!",
+        category: "Novels",
+        content: "A longer journey, chapter by chapter, page by page. Read the complete novel as a PDF.",
+        link: "faulty-eva.pdf",
+        linkLabel: "Read Faulty Eva! ♡"
+      },
       {
         title: "Hey, Diary",
         category: "Diary",
@@ -2032,7 +1998,11 @@ Goodnight.`
 
       const date = document.createElement("p");
       date.className = "entry-date";
-      date.textContent = formatDate(entry.date);
+      if (entry.date) {
+        date.textContent = formatDate(entry.date);
+      } else {
+        date.hidden = true;
+      }
 
       const content = document.createElement("p");
       content.className = "entry-content";
@@ -2063,8 +2033,19 @@ Goodnight.`
       note.className = "heart-note";
       note.textContent = "Your heart is saved on this device only.";
       actions.append(heart, note);
-      article.append(category, title, date, content, actions);
+      article.append(category, title, date, content);
 
+      if (entry.link) {
+        const link = document.createElement("a");
+        link.className = "button-link";
+        link.href = entry.link;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = entry.linkLabel || "Read";
+        article.appendChild(link);
+      }
+
+      article.appendChild(actions);
       return article;
     }
 
@@ -2091,15 +2072,7 @@ Goodnight.`
 
     filterButtons.forEach(button => {
       button.addEventListener("click", () => {
-        const selectedFilter = button.dataset.filter;
-
-        filterButtons.forEach(item => {
-          const isActive = item === button;
-          item.classList.toggle("active", isActive);
-          item.setAttribute("aria-pressed", String(isActive));
-        });
-
-        renderEntries(selectedFilter);
+        applyDiaryFilter(button.dataset.filter);
       });
     });
 
@@ -2137,26 +2110,46 @@ Goodnight.`
     const pageViews = Array.from(document.querySelectorAll('.page-view'));
     const pageLinks = Array.from(document.querySelectorAll('[data-page-link]'));
     const pageIds = {
-      home: 'home', diary: 'diary', stories: 'stories', writing: 'writing',
+      home: 'home', diary: 'diary', poetry: 'diary', stories: 'stories', novels: 'diary',
       read: 'read', 'little-letter': 'little-letter', about: 'about'
     };
 
+    function applyDiaryFilter(filter = 'All') {
+      const button = Array.from(filterButtons).find(item => item.dataset.filter === filter);
+      if (!button) return;
+
+      filterButtons.forEach(item => {
+        const isActive = item === button;
+        item.classList.toggle('active', isActive);
+        item.setAttribute('aria-pressed', String(isActive));
+      });
+      renderEntries(filter);
+    }
+
     function showPage(pageName, updateHash = true) {
       const safePage = pageIds[pageName] ? pageName : 'home';
+      const targetPage = pageIds[safePage];
+
       pageViews.forEach(view => {
-        const active = view.dataset.page === safePage;
+        const active = view.dataset.page === targetPage;
         view.classList.toggle('is-current', active);
         view.setAttribute('aria-hidden', String(!active));
       });
+
       pageLinks.forEach(link => {
         const active = link.dataset.pageLink === safePage;
         if (active) link.setAttribute('aria-current', 'page');
         else link.removeAttribute('aria-current');
       });
-      if (updateHash) {
-        const hashId = pageIds[safePage];
-        try { history.replaceState(null, '', '#' + hashId); } catch (_) {}
+
+      if (targetPage === 'diary') {
+        applyDiaryFilter(safePage === 'poetry' ? 'Poetry' : safePage === 'novels' ? 'Novels' : 'All');
       }
+
+      if (updateHash) {
+        try { history.replaceState(null, '', '#' + safePage); } catch (_) {}
+      }
+
       window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
     }
 
@@ -2164,8 +2157,7 @@ Goodnight.`
       link.addEventListener('click', event => {
         const targetId = link.getAttribute('href').slice(1);
         const target = document.getElementById(targetId);
-        if (!target) return;
-        const targetPage = target.dataset.page || targetId;
+        const targetPage = link.dataset.pageLink || target?.dataset.page || targetId;
         if (!pageIds[targetPage]) return;
         event.preventDefault();
         showPage(targetPage);
@@ -2174,13 +2166,11 @@ Goodnight.`
 
     window.addEventListener('popstate', () => {
       const requestedId = window.location.hash.slice(1) || 'home';
-      const target = document.getElementById(requestedId);
-      showPage(target?.dataset.page || requestedId, false);
+      showPage(requestedId, false);
     });
 
     const initialId = window.location.hash.slice(1) || 'home';
-    const initialTarget = document.getElementById(initialId);
-    showPage(initialTarget?.dataset.page || initialId, false);
+    showPage(initialId, false);
 
     // The teddy loader appears briefly when this HTML page opens.
     const siteLoader = document.getElementById('site-loader');
