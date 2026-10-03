@@ -1303,13 +1303,12 @@
     }
     nav a:nth-child(1)::before { content: "🏡"; }
     nav a:nth-child(2)::before { content: "📔"; }
-    nav a:nth-child(3)::before { content: "📰"; }
-    nav a:nth-child(4)::before { content: "🦋"; }
-    nav a:nth-child(5)::before { content: "🖋️"; }
-    nav a:nth-child(6)::before { content: "📚"; }
-    nav a:nth-child(7)::before { content: "🎬"; }
-    nav a:nth-child(8)::before { content: "💌"; }
-    nav a:nth-child(9)::before { content: "🌷"; }
+    nav a:nth-child(3)::before { content: "🦋"; }
+    nav a:nth-child(4)::before { content: "🖋️"; }
+    nav a:nth-child(5)::before { content: "🎬"; }
+    nav a:nth-child(6)::before { content: "💌"; }
+    nav a:nth-child(7)::before { content: "🌷"; }
+    nav a:nth-child(9)::before { content: "📰"; }
     nav a:hover {
       background: #fff8ee;
       color: #8e4b64;
@@ -1578,7 +1577,23 @@
       *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
     }
 
-  </style>
+  
+    .author-desk { text-align: left; max-width: 820px; }
+    .author-desk h3 { color: var(--deep-pink); }
+    .author-form { display: grid; gap: 9px; margin-top: 18px; }
+    .author-form label { color: #8b5b6d; font-weight: 700; margin-top: 7px; }
+    .author-form input, .author-form select, .author-form textarea { width: 100%; box-sizing: border-box; border: 1px solid #edc8d5; border-radius: 12px; background: #fffafd; color: #57464c; padding: 12px 14px; font: inherit; }
+    .author-form textarea { resize: vertical; line-height: 1.65; }
+    .author-form input:focus, .author-form select:focus, .author-form textarea:focus { outline: 2px solid #d98ca8; outline-offset: 2px; }
+    .author-warning { background: #fff3f6; border-left: 4px solid #d98ca8; border-radius: 8px; padding: 12px 14px; font-size: .92rem; }
+    .author-status { color: #9b5271; font-weight: 700; min-height: 1.3em; }
+    .author-desk-top, .author-actions { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .author-saved { margin-top: 30px; border-top: 1px solid #f1d6e0; padding-top: 18px; }
+    .saved-entry { border: 1px solid #f1d6e0; background: #fffafd; padding: 12px 14px; border-radius: 12px; margin: 10px 0; }
+    .saved-entry strong { color: #a95773; }
+    @media (max-width: 600px) { .author-desk { padding: 22px; } .author-actions > * { width: 100%; text-align: center; } }
+
+</style>
 </head>
 
 <body>
@@ -1637,6 +1652,7 @@
         <a href="#read" data-page-link="read">YOUTUBE</a>
         <a href="#little-letter" data-page-link="little-letter">SURPRISE GIFT</a>
         <a href="#about" data-page-link="about">ABOUT</a>
+        <a href="#authors-corner" data-page-link="authors-corner">AUTHOR’S CORNER</a>
       </nav>
     </div>
   </header>
@@ -1863,6 +1879,41 @@
         <button class="button-link" id="letter-button" type="button">Open my letter ♡</button>
       </div>
     </section>
+
+  <section class="section page-view" data-page="authors-corner" id="authors-corner">
+    <div class="section-heading">
+      <h2>Author’s Corner ✍️</h2>
+      <p>Your little writing desk — draft, organize, and preview new pages for Eva Dandelion.</p>
+    </div>
+    <div class="welcome-card author-desk">
+      <div id="author-setup" hidden></div>
+      <div id="author-login" hidden>
+        <h3>Welcome back, author 🌸</h3>
+        <p>Sign in with your author ID and password to open your writing desk.</p>
+        <form id="login-form" class="author-form">
+          <label for="login-id">Author ID</label><input id="login-id" required autocomplete="username" />
+          <label for="login-pass">Password</label><input id="login-pass" type="password" required autocomplete="current-password" />
+          <button class="button-link" type="submit">Log in to Author’s Corner ♡</button>
+        </form>
+        <p id="login-error" role="status" class="author-status"></p>
+      </div>
+      <div id="author-editor" hidden>
+        <div class="author-desk-top"><h3>Your writing desk ✨</h3><button type="button" class="filter-button" id="author-logout">Lock desk</button></div>
+        <p class="author-warning">Preview mode: new posts are saved in this browser only. They will not appear for other visitors until the site HTML is updated and uploaded to GitHub.</p>
+        <form id="entry-form" class="author-form">
+          <label for="entry-date">Date</label><input id="entry-date" type="date" required />
+          <label for="entry-category">Category</label>
+          <select id="entry-category" required><option>Diary</option><option>Poetry</option><option>Stories</option><option>Novels</option><option>Articles</option></select>
+          <label for="entry-title">Title</label><input id="entry-title" required maxlength="160" placeholder="Give your page a title…" />
+          <label for="entry-content">Your writing</label><textarea id="entry-content" rows="10" required placeholder="Let your thoughts bloom here…"></textarea>
+          <label for="entry-file">Or import a text file (.txt)</label><input id="entry-file" type="file" accept=".txt,text/plain" />
+          <div class="author-actions"><button class="button-link" type="submit">Publish to this preview ♡</button><button class="filter-button" type="button" id="export-entries">Export saved entries</button></div>
+        </form>
+        <p id="author-status" class="author-status" role="status" aria-live="polite"></p>
+        <div class="author-saved"><h3>Saved in this browser</h3><div id="saved-entry-list"></div></div>
+      </div>
+    </div>
+  </section>
 
   <footer>
     <div class="footer-name">Eva Dandelion</div>
@@ -2415,6 +2466,13 @@ Goodnight.`
       }
     ];
 
+    // Browser-local drafts for this prototype. These are not published to the live website.
+    const LOCAL_ENTRIES_KEY = "eva-dandelion-author-entries-preview";
+    try {
+      const localEntries = JSON.parse(localStorage.getItem(LOCAL_ENTRIES_KEY) || "[]");
+      if (Array.isArray(localEntries)) PUBLIC_ENTRIES.unshift(...localEntries);
+    } catch (_) {}
+
     const entriesContainer = document.getElementById("entries");
     const filterButtons = document.querySelectorAll(".filter-button");
 
@@ -2558,7 +2616,7 @@ Goodnight.`
     const pageLinks = Array.from(document.querySelectorAll('[data-page-link]'));
     const pageIds = {
       home: 'home', diary: 'diary', poetry: 'diary', stories: 'stories', novels: 'diary', articles: 'diary',
-      read: 'read', 'little-letter': 'little-letter', about: 'about'
+      read: 'read', 'little-letter': 'little-letter', about: 'about', 'authors-corner': 'authors-corner'
     };
 
     function applyDiaryFilter(filter = 'All') {
@@ -2615,6 +2673,73 @@ Goodnight.`
       const requestedId = window.location.hash.slice(1) || 'home';
       showPage(requestedId, false);
     });
+
+    // Author's Corner preview login only. This is NOT secure authentication.
+    // A static HTML file cannot keep credentials secret from its viewers.
+    const AUTHOR_ID = "Vedmay2630";
+    const AUTHOR_PASSWORD = "River";
+    const setupPanel = document.getElementById("author-setup");
+    const loginPanel = document.getElementById("author-login");
+    const editorPanel = document.getElementById("author-editor");
+    const authorStatus = document.getElementById("author-status");
+    const showAuthorState = (state) => {
+      setupPanel.hidden = true;
+      loginPanel.hidden = state !== "login";
+      editorPanel.hidden = state !== "editor";
+      if (state === "editor") renderSavedEntryList();
+    };
+    const savedLocalEntries = () => { try { const v = JSON.parse(localStorage.getItem(LOCAL_ENTRIES_KEY) || "[]"); return Array.isArray(v) ? v : []; } catch (_) { return []; } };
+    function renderSavedEntryList() {
+      const list = document.getElementById("saved-entry-list");
+      list.replaceChildren();
+      const saved = savedLocalEntries();
+      if (!saved.length) { const p = document.createElement("p"); p.textContent = "No new pages saved yet. Your first one can start here. 🌷"; list.appendChild(p); return; }
+      saved.forEach(entry => { const card = document.createElement("div"); card.className = "saved-entry"; const title = document.createElement("strong"); title.textContent = entry.title; const meta = document.createElement("p"); meta.textContent = `${entry.date} · ${entry.category}`; card.append(title, meta); list.appendChild(card); });
+    }
+    showAuthorState("login");
+    document.getElementById("login-form").addEventListener("submit", event => {
+      event.preventDefault();
+      const id = document.getElementById("login-id").value.trim();
+      const pass = document.getElementById("login-pass").value;
+      const error = document.getElementById("login-error");
+      if (id === AUTHOR_ID && pass === AUTHOR_PASSWORD) {
+        error.textContent = "";
+        document.getElementById("login-pass").value = "";
+        showAuthorState("editor");
+      } else {
+        error.textContent = "That author ID or password is incorrect. Please try again.";
+      }
+    });
+    document.getElementById("author-logout").addEventListener("click", () => showAuthorState("login"));
+    document.getElementById("entry-file").addEventListener("change", async event => {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+      if (!file.name.toLowerCase().endsWith(".txt")) { authorStatus.textContent = "For this preview, please choose a .txt file."; event.target.value = ""; return; }
+      document.getElementById("entry-content").value = await file.text();
+      authorStatus.textContent = "Text imported into your writing box. Check it before publishing.";
+    });
+    document.getElementById("entry-form").addEventListener("submit", event => {
+      event.preventDefault();
+      const entry = {
+        title: document.getElementById("entry-title").value.trim(),
+        category: document.getElementById("entry-category").value,
+        date: document.getElementById("entry-date").value,
+        content: document.getElementById("entry-content").value.trim()
+      };
+      if (!entry.title || !entry.date || !entry.content) { authorStatus.textContent = "Please fill in the date, title, and writing first."; return; }
+      const saved = savedLocalEntries(); saved.unshift(entry);
+      try { localStorage.setItem(LOCAL_ENTRIES_KEY, JSON.stringify(saved)); }
+      catch (_) { authorStatus.textContent = "This browser couldn’t save the entry. Try a smaller text."; return; }
+      PUBLIC_ENTRIES.unshift(entry); renderEntries(); renderSavedEntryList();
+      authorStatus.textContent = "Saved to this browser and added to the preview’s writing shelf ♡";
+      document.getElementById("entry-title").value = ""; document.getElementById("entry-content").value = ""; document.getElementById("entry-file").value = "";
+    });
+    document.getElementById("export-entries").addEventListener("click", () => {
+      const blob = new Blob([JSON.stringify(savedLocalEntries(), null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob); const a = document.createElement("a"); a.href = url; a.download = "eva-dandelion-local-entries.json"; a.click(); URL.revokeObjectURL(url);
+      authorStatus.textContent = "Exported your browser-saved entries as a JSON file.";
+    });
+    document.getElementById("entry-date").value = new Date().toISOString().slice(0, 10);
 
     const initialId = window.location.hash.slice(1) || 'home';
     showPage(initialId, false);
